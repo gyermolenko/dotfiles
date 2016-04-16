@@ -1,0 +1,609 @@
+source ~/.vim/vundle.vim
+
+syntax on
+
+" filetype on
+filetype plugin indent on
+
+source ~/.vim/cyr_keys.vim
+
+" === Settings  ======================================================
+" ===================================================================
+
+" ====== System ================================================
+" ==============================================================
+set encoding=utf-8
+set noswapfile
+" in all modes do not select row numbers via mouse
+set mouse=a
+set ttymouse=xterm2
+
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+
+" to be able switch buffer wo saving explicitly
+set hidden
+
+
+" cursor is kept in the same column on buffer switch
+set nostartofline
+
+" One of the following lines will save me from delays on exiting visual mode
+" set esckeys
+"set timeoutlen=1000
+"set ttimeoutlen=0
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+" set autochdir
+" autocmd BufEnter, BufNewFile * silent! lcd %:p:h
+
+"do not select first word char on vw
+" default - inclusive
+set selection=inclusive
+
+" position of splits
+set splitright
+set splitbelow
+
+" to alias unnamed register to the + register, which is the X Window clipboard
+set clipboard=unnamedplus
+
+" === Indentation ========
+set tabstop=4
+" tab like 4 spaces
+set softtabstop=4
+" number of spaces to use for each step of indent
+set shiftwidth=4
+" drop unused spaces
+set shiftround
+" tab with spaces
+set expandtab
+" copy indent from previous line
+set autoindent
+" nowrap long lines
+set textwidth=0
+" ===================
+
+" === Search =============
+" Highlight search results
+set nohlsearch
+" make so it do not hl when vimrc reloads, even if hlsearch was on
+noh
+
+" do not auto-move when hit *
+" nnoremap * *<c-o>
+" Keep search matches in the middle of the window.
+" conflicts with Indexed Search plugin
+" nnoremap n nzz
+" nnoremap N Nzz
+
+" Ignore case in search patterns
+set ignorecase
+" Override the 'ignorecase' option if the search pattern contains upper case characters
+set smartcase
+" While typing a search command, show where the pattern
+set incsearch
+
+" ====================================
+
+" not less then x rows fixed before/after line with cursor during scroll
+set scrolloff=3
+" lines to scroll when cursor leaves screen
+" set scrolljump=3
+set scrolljump=1
+set sidescroll=1
+set sidescrolloff=10
+
+" scroll by n lines at once
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
+vnoremap <C-e> 5<C-e>
+vnoremap <C-y> 5<C-y>
+
+set showtabline=2
+
+" 00 padded digits considered decimal, not octal. So now C-a for 007 does 008 instead of 010
+set nrformats=
+
+" === Settings for buffers
+" map <C-q> :qa!<CR>
+" move to next/previous buffer
+" noremap <C-Right> :bn<CR>
+" noremap <C-Left> :bp<CR>
+
+" === Insert
+" Allow backspace to remove indents, newlines and old tex"
+set backspace=indent,eol,start
+" Start in normal (non-paste) mode
+set nopaste
+
+
+" === Other
+
+" === Matching characters
+" the cursor will briefly jump to the matching brace when you insert one
+"set showmatch
+"set matchtime=3
+" Make < and > match as well
+" set matchpairs+=<:>
+set matchpairs=(:),[:],{:}
+" easier bracket matching
+" map <tab> %
+"noremap % v%
+
+
+
+" === Display ========================
+" use 256 colors in terminal. Put before colorscheme settings
+"Also, if the terminfo file is correct, there's no need to set 't_Co' in Vim. It will ask the terminal for that value.
+set t_Co=256
+
+" colorscheme monokai
+" from bundle flazz/vim-colorschemes, edited search and pmenu
+" colorscheme monokai-chris_
+colorscheme badwolf
+" colorscheme badwolf_
+" highlight Normal ctermbg=None
+
+" == terminal colors stuff. needs investigation ===
+" http://blog.konradwasowicz.com/there-are-many-Vims-like-it.html
+" set t_Co=256
+" set term=xterm-256color
+" Disable Background Color Erase (BCE) so that color scheme work
+" properly when Vim is used inside tmux and GNU screen.
+" set t_ut=
+" ====================
+
+" Always show a statusline
+set laststatus=2
+
+" Show commands
+set showcmd
+" do not print INSERT in insert mode. airline can handle that. and it
+" conflicts with jedi-call-signatures setts
+set noshowmode
+
+" set colorcolumn=79
+" number of current line
+set number
+" reletive numbers for up/down
+set relativenumber
+
+
+
+"show invisible characters
+" set listchars=nbsp:␣,extends:…,trail:•,tab:»·
+set list
+" set listchars=eol:↲,tab:▶▹,nbsp:␣,extends:…,trail:•
+set listchars=nbsp:␣,extends:…,tab:»\ ,trail:·
+" set listchars=eol:¬,
+set showbreak=…\ 
+" set showbreak=▹\ 
+" set showbreak=↪
+" Allow for cursor beyond last character
+set virtualedit=block
+
+
+" === Custom mappings ======================================================
+" ===================================================================
+
+" ==== Leader ====
+" ================================================
+let mapleader = ","
+let maplocalleader = " "
+" let mapleader = " "
+" nmap <space> ,
+"map <space> <leader>
+"map <space><space> <leader><leader>
+" Edit config files
+nnoremap <leader><Tab> :tabe<cr>
+nnoremap <leader>er :e $MYVIMRC<CR>
+nnoremap <leader>ev :e ~/.vim/vundle.vim<CR>
+nnoremap <leader>ep :e ~/.vim/plugin_settings.vim<CR>
+nnoremap <leader>en :e /media/data/Dropbox/vimnotes<CR>
+nnoremap <leader>ew :e /media/data/Dropbox/vimworknotes<CR>
+nnoremap <leader>et :e ~/.tmux.conf<CR>
+nnoremap <leader>ez :e ~/.zshrc<CR>
+" Reload vimrc
+nnoremap <leader>rr :source $MYVIMRC<CR>
+
+" nnoremap <leader>pr :cd /media/data/Dropbox/Projects/<CR>
+" nnoremap <leader>wd :pwd<CR>
+nnoremap <leader>q :qa!<CR>
+" closes tab containing buffer
+" nnoremap <leader>d :bd!<cr>
+" do not close containing tab
+nnoremap <Leader>d :Bclose!<CR>
+" Kill window
+" nnoremap <Leader>dt :q<cr>
+
+
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+
+" vnoremap <leader>1 1gt
+" vnoremap <leader>2 2gt
+" vnoremap <leader>3 3gt
+" vnoremap <leader>4 4gt
+" vnoremap <leader>5 5gt
+" vnoremap <leader>6 6gt
+
+" clear normal/visual mode highlighting
+nnoremap <localleader><space> :noh<CR>
+
+" switch to alternate buffer
+" nnoremap <localleader>o <C-^>
+nnoremap <c-p> <C-^>
+
+" Show trailing whitespace:
+nnoremap <localleader>h<space> /\s\+$<cr>
+
+" nnoremap <space>; :<up>
+" nnoremap <space>/ /<up>
+nnoremap <localleader>; :<up>
+nnoremap <localleader>/ /<up>
+" ================================================
+
+
+
+" easier inline navigation
+noremap H ^
+noremap L $
+vnoremap L g_
+
+nnoremap } L
+nnoremap { H
+vnoremap } L
+vnoremap { H
+nnoremap ) }
+nnoremap ( {
+vnoremap ) }zz
+vnoremap ( {zz
+
+nnoremap ' `
+vnoremap ' `
+
+" nnoremap j gj
+" nnoremap k gk
+" nnoremap gj j
+" nnoremap gk k
+" nnoremap <expr> j v:count ? 'j' : 'gj'
+" nnoremap <expr> k v:count ? 'k' : 'gk'
+" vnoremap j gj
+" vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+" vnoremap j gj
+" vnoremap k gk
+
+
+" inoremap jk <Esc>
+
+" Experimental
+" delete one word to the right
+" inoremap jj <Esc>ldei
+
+
+" highlight last inserted text
+" nnoremap gV `[v`]
+" nnoremap gh `[v`]
+" gl is vacant
+nnoremap gs `[v`]
+" horizontal scroll
+nnoremap zh 30zh
+nnoremap zl 30zl
+
+" Split lines on space. opposit to J
+nnoremap " f<space>r<CR>
+
+" Save
+nmap <F2> :update<CR>
+vmap <F2> <Esc><F2>gv
+imap <F2> <Esc><F2>
+
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" c-f is for opened buffers
+" nnoremap <C-f> L
+" nnoremap <C-b> M
+" inoremap <C-b> H
+
+" inoremap <c-a> <esc>I
+" inoremap <c-e> <esc>A
+inoremap <c-a> <Home>
+inoremap <c-e> <End>
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+inoremap <C-d> <Del>
+
+" by default those keys scroll history up-down with no respect to prefix
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
+
+" search for visually selected text
+" and now i have vim-asterisk
+" vnoremap // y/<C-R>"<CR>
+
+" since i use q for buf-switch
+nnoremap ! q
+
+
+" ========== end of Custom mappings ==================================
+" ===================================================================
+
+
+" like J for insert mode. Removes indentation and undo-es <cr> 
+" inoremap <C-\> <C-o>:left 0<Cr><BS>
+" easily substitutable with <c-w><c-w>
+
+
+" ==================== ctags ==================================
+" ===================================================================
+" set tags=tags,envtags
+set tags=project.tags,env.tags
+" set tags=$VIRTUAL_ENV/tags
+" nnoremap <F7> :!ctags -R -f tags $VIRTUAL_ENV/lib/python2.7/site-packages<CR>
+" nnoremap <F7> :!ctags -R -f $VIRTUAL_ENV/tags --python-kinds=-i -a --exclude=.git $VIRTUAL_ENV/lib/python2.7/site-packages<CR>
+" nnoremap <F7> :!ctags -R --python-kinds=-i -a --exclude=.git $VIRTUAL_ENV/lib/python2.7/site-packages<CR>
+" ctags -R -f ~/nan/tags --python-kinds=-i --exclude=.git ~/nan/
+
+" generate simple tags (more flags for this command are in ~/.ctags conf file)
+nnoremap <leader>gtp :!ctags -f 'project.tags' --exclude={env,feeds/mysql}<cr>
+" nnoremap <F7> :!ctags -R -f tags --exclude=env<cr>
+" generate env tags
+nnoremap <leader>gte :!ctags -f 'env.tags' $VIRTUAL_ENV/lib/python2.7/site-packages<cr>
+" ===============================================
+
+
+" set nowildmenu
+set nowildmenu
+set wildmode=longest:list,full
+set wildignore+=.hg,.git,.svn
+set wildignore+=*.jpg,*.jpeg,*.bmp,*.gif,*.png
+set wildignore+=*.pyc
+
+" Show as much as possible of a wrapped last line, not just @
+set display=lastline
+
+
+" === Text objects ==============================
+for char in [ '_', '/', '<bslash>', '`' ]
+    execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
+    execute 'onoremap i' . char . ' :normal vi' . char . '<CR>'
+    execute 'xnoremap a' . char . ' :<C-u>normal! F' . char . 'vf' . char . '<CR>'
+    execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
+endfor
+
+"================================================
+
+
+
+
+" === Scripts ======================================
+" ==================================================
+
+" === GUI =============================================== 
+
+if has("gui_running")
+    " GUI is running or is about to start.
+    "set guifont=Menlo\ Regular\ for\ Powerline:h12
+
+    " Remove all the UI cruft
+    " minus toolbar
+    set go-=T
+    " minus Menu bar is present
+    set go-=m
+    " minus Left-hand scrollbar
+    set go-=l
+    " minus Left-hand scrollbar when there is a vertically split
+    set go-=L
+    " minus Right-hand scrollbar
+    set go-=r
+    " minus Right-hand scrollbar when there is a vertically split
+    set go-=R
+
+    " highlight SpellBad term=underline gui=undercurl guisp=Orange
+
+    " Different cursors for different modes.
+    " set guicursor=n-c:block-Cursor-blinkon0
+    " set guicursor+=v:block-vCursor-blinkon0
+    " set guicursor+=i-ci:ver20-iCursor
+    " Disable all blinking:
+    set guicursor+=a:blinkon0
+
+  " Maximize gvim window (for an alternative on Windows, see simalt below).
+  set lines=999 columns=999
+" else
+" FAILS IF TMUX ADDS HIS TABLINE
+  " This is console Vim.
+  " if exists("+lines")
+  "   set lines=55
+  " endif
+  " if exists("+columns")
+  "   set columns=130
+  " endif
+endif
+" ==================================================
+
+
+" Only show cursorline in the current window and in normal mode.
+" ==================================================
+" set cursorline
+" augroup cline
+"     au!
+"     au WinLeave,InsertEnter * set nocursorline
+"     au WinEnter,InsertLeave * set cursorline
+" augroup END
+" ==================================================
+
+" hi CursorLine ctermbg=235 cterm=none
+
+" hi CursorLine term=bold cterm=bold guibg=Grey40
+" hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white
+
+" ===========================================
+" Make sure Vim returns to the same line when you reopen a file.
+" ===========================================
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+" ===========================================
+
+" === View and paste from a register =======
+" Display the numbered registers, press a key and paste it to the buffer
+" candidate 4del
+function! Reg()
+    reg
+    echo "Register: "
+    let char = nr2char(getchar())
+    if char != "\<Esc>"
+        execute "normal! \"".char."p"
+    endif
+    redraw
+endfunction
+
+command! -nargs=0 Reg call Reg()
+
+" nmap <space>r :call Reg()<cr>
+" vmap <space>r :call Reg()<cr>
+nmap <localleader>r :call Reg()<cr>
+vmap <localleader>r :call Reg()<cr>
+" ===========================================
+
+
+" === List all leader mappings ========================================
+function! ListLeaders()
+     silent! redir @a
+     silent! nmap <LEADER>
+     silent! redir END
+     silent! new
+     silent! put! a
+     silent! g/^s*$/d
+     silent! %s/^.*,//
+     silent! normal ggVG
+     silent! sort
+     silent! let lines = getline(1,"$")
+endfunction
+" ===========================================
+
+
+" === end of Scripts ========================================
+
+
+
+
+" === Filetype-related ========================
+
+" removes underline in html for 'a' tags. and something more
+let html_no_rendering=1
+
+" au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
+autocmd BufRead,BufNewFile *.sql set filetype=pgsql
+autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
+autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
+
+autocmd FileType python,javascript setlocal colorcolumn=80
+"I don't want the docstring window to popup during completion
+autocmd FileType python setlocal completeopt-=preview
+
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+" some day..
+" autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType sql setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+" autocmd BufRead,BufNewFile *.foo set filetype=foo
+" remove annoying <:> pair highligh in html
+autocmd FileType xml,html,htmljinja,htmldjango set matchpairs=(:),[:],{:}
+
+autocmd BufRead,BufNewFile *.go setlocal nolist
+
+nnoremap <leader>fh :set ft=html<CR>
+nnoremap <leader>fj :set ft=htmljinja<CR>
+nnoremap <leader>fd :set ft=htmldjango<CR>
+nnoremap <leader>fp :set ft=python<CR>
+
+augroup ft_html
+    au!
+    " Django tags
+    au FileType html,jinja,htmldjango,htmljinja inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
+    " Django variables
+    au FileType html,jinja,htmldjango,htmljinja inoremap <buffer> <c-y> {{<space><space>}}<left><left><left>
+augroup END
+
+" do not extend comment-string to the next lines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" === end of filetype-related ===============================================================
+
+" === Highlight ================================================
+
+" do not highlight & and ? in addresses in red
+hi Error NONE
+" highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
+" highlight MatchTag ctermfg=green ctermbg=black guifg=black guibg=lightgreen
+" highlight MatchTag cterm=bold,underline ctermfg=11 ctermbg=235 
+highlight MatchTag cterm=bold,underline ctermfg=11 ctermbg=none 
+
+highlight MatchParen cterm=bold ctermbg=none ctermfg=164
+" highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=green
+" highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=39
+
+" blue fg as in clever-f find
+" highlight Search ctermfg=39 ctermbg=NONE cterm=bold,underline
+" bright magenta fg
+" highlight Search ctermfg=164 ctermbg=NONE cterm=bold
+" magenta fg, but with light transparent bg
+highlight Search ctermfg=164 ctermbg=235 cterm=bold
+" pale yellow bg
+" highlight Search ctermfg=16 ctermbg=143 cterm=bold
+
+" hi StatusLine ctermfg=164 ctermbg=39 cterm=bold
+" hi StatusLineNC ctermfg=16 ctermbg=235 cterm=bold
+
+" hi TabLine term=underline ctermfg=15 ctermbg=233
+" hi TabLineSel term=bold ctermfg=16 ctermbg=39 guifg=#000000 guibg=#0a9dff
+" hi TabLineFill term=reverse ctermfg=15 ctermbg=233 guifg=#f8f6f2 guibg=#1c1b1a
+hi TabLine term=underline ctermfg=243 ctermbg=236
+hi TabLineSel term=bold ctermfg=222 ctermbg=236
+hi TabLineFill term=reverse ctermfg=15 ctermbg=236
+" ==================================================================
+
+
+
+" ========== Plugin settings =========
+source ~/.vim/plugin_settings.vim
+
+
+
+" === Mappings with Alt are hard ===
+" cnoremap <Esc>b <S-Left>
+" cnoremap <Esc>f <S-Right>
+execute "set <M-b>=\eb"
+execute "set <M-f>=\ef"
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
+" cnoremap <Esc>f <S-Right>
+
+" execute "set <M-m>=\em"
+" nnoremap <M-j> :echo "alt"
+" delete one character to the right
+" nnoremap <M-m> lxh
+" win
+" nnoremap q :echo "win"
+

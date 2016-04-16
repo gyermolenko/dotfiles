@@ -1,0 +1,23 @@
+# $include /etc/Inputrc
+
+# set editing-mode emacs
+
+"\e1": echo '1'
+"\e2": echo '2'
+"\e3": echo '3'
+"\e4": echo '4'
+"\e5": echo '5'
+
+# psql
+# set show-all-if-ambiguous on
+# set completion-ignore-case On
+
+# If set to ‘on’, Readline attempts to bind the control characters treated specially by the kernel’s terminal driver to their Readline equivalents.
+set bind-tty-special-chars off
+Control-u:    kill-whole-line
+
+# Adds punctuation as word delimiters
+"\C-w": backward-kill-word
+
+Control-n:    history-search-forward
+Control-p:    history-search-backward

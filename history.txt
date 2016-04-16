@@ -1,0 +1,29 @@
+## to list all symlinks in current dir: 
+# find . -maxdepth 1 -type l -ls
+
+## tmux 2.1 
+# .tmux-next.conf .tmux.conf
+
+
+## from ~/.vim/ folder
+ln -s ../dotfiles/.vim/cyr_keys.vim cyr_keys.vim
+ln -s ../dotfiles/.vim/plugin_settings.vim plugin_settings.vim
+ln -s ../dotfiles/.vim/obsolete_settings.vim obsolete_settings.vim
+ln -s ../dotfiles/.vim/vimrc vimrc
+ln -s ../dotfiles/.vim/vundle.vim vundle.vim
+
+## from home folder
+ln -s dotfiles/.ackrc .ackrc
+ln -s dotfiles/.bashrc .bashrc
+ln -s dotfiles/.ctags .ctags
+ln -s dotfiles/.dircolors .dircolors
+ln -s dotfiles/.editrc .editrc      
+ln -s dotfiles/.inputrc .inputrc
+ln -s dotfiles/.pgclirc .pgclirc
+ln -s dotfiles/.profile .profile
+ln -s dotfiles/.psqlrc .psqlrc  
+ln -s dotfiles/.sqliterc .sqliterc
+ln -s dotfiles/.zshrc .zshrc 
+ln -s dotfiles/.zsh_vi_mode.conf .zsh_vi_mode.conf
+ln -s dotfiles/titlebar-switch.sh titlebar-switch.sh
+ln -s dotfiles/tmux_setup.sh tmux_setup.sh  

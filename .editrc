@@ -1,0 +1,5 @@
+# mysql
+bind "^U"    vi-kill-line-prev
+bind "^W"    ed-delete-prev-word
+bind "^N"    ed-search-next-history
+bind "^P"    ed-search-prev-history
