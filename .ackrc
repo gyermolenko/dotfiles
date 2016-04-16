@@ -1,0 +1,8 @@
+--smart-case
+
+# Colors
+--color-filename=bold green
+--color-match=bold red
+
+# Custom types and abbreviatinos.
+--type-set=py=.py
