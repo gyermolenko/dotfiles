@@ -137,6 +137,7 @@ alias ,rz="source ~/.zshrc"
 alias ,et="vim ~/.tmux.conf"
 alias tmu="./tmux_setup.sh"
 alias tmux="tmux-next -2"
+alias tmuxh="./tmux_setup_home.sh"
 alias ag="ag --color-match 1\;31"
 # export TERM=xterm-256color
 
