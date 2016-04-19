@@ -259,14 +259,14 @@ noremap H ^
 noremap L $
 vnoremap L g_
 
-nnoremap } L
-nnoremap { H
-vnoremap } L
-vnoremap { H
-nnoremap ) }
-nnoremap ( {
-vnoremap ) }zz
-vnoremap ( {zz
+nnoremap ) L
+nnoremap ( H
+vnoremap ) L
+vnoremap ( H
+" nnoremap ) }
+" nnoremap ( {
+" vnoremap ) }zz
+" vnoremap ( {zz
 
 nnoremap ' `
 vnoremap ' `
