@@ -26,7 +26,7 @@ export GOPATH=$HOME/gocode
 export PATH=$PATH:/usr/local/go/bin
 
 # Tmux
-# export PATH=$PATH:$HOME/tmux
+export PATH=$PATH:$HOME/tmux
 
 
 # killall xcape
