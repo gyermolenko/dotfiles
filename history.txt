@@ -1,4 +1,3 @@
-# hi
 ## to list all symlinks in current dir: 
 # find . -maxdepth 1 -type l -ls
 
