@@ -331,8 +331,7 @@ nnoremap <silent> [r :CtrlSpaceGoUp<CR>
 
 
 " === Ack =========
-nnoremap <leader>ac :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js 
-" nnoremap <leader>a :Ack 
+nnoremap <leader>ac :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags 
 nnoremap <leader>Ac :Ack --ignore-file=ext:js 
 nnoremap <leader>ag :Ag --ignore-dir={env,.env,feeds/mysql} 
 nnoremap <leader>Ag :Ag 
