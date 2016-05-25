@@ -42,7 +42,8 @@ nnoremap <F9> :PymodeLint<CR>
 " let g:pymode_lint_write = 1
 let g:pymode_virtualenv = 1
 let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_key = '<leader>B'
+" let g:pymode_breakpoint_key = '<leader>B'
+let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
 
 
 " === Jedi
@@ -332,6 +333,7 @@ nnoremap <silent> [r :CtrlSpaceGoUp<CR>
 
 " === Ack =========
 nnoremap <leader>ac :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags 
+nnoremap <leader>ar :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags "<c-r>*"
 nnoremap <leader>Ac :Ack --ignore-file=ext:js 
 nnoremap <leader>ag :Ag --ignore-dir={env,.env,feeds/mysql} 
 nnoremap <leader>Ag :Ag 
@@ -427,6 +429,8 @@ let g:AutoPairsOnlyWhitespace = 1
 
 " === Easy-motion
 map <Leader>\ <Plug>(easymotion-prefix)
+map <localleader>j V<Plug>(easymotion-j)
+map <localleader>k V<Plug>(easymotion-k)
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_do_shade = 1
 let g:EasyMotion_use_smartsign_us = 1

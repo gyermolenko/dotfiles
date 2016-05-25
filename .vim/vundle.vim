@@ -100,6 +100,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'haya14busa/vim-asterisk'
 Plugin 'mhinz/vim-hugefile'
 Plugin 'kana/vim-textobj-line'
+
+" Plugin 'haya14busa/vim-easyoperator-line'
 " ====================================================================
 
 
