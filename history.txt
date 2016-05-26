@@ -26,4 +26,9 @@ ln -s dotfiles/.sqliterc .sqliterc
 ln -s dotfiles/.zshrc .zshrc 
 ln -s dotfiles/.zsh_vi_mode.conf .zsh_vi_mode.conf
 ln -s dotfiles/titlebar-switch.sh titlebar-switch.sh
+
+# ~work-home
 ln -s dotfiles/tmux_setup.sh tmux_setup.sh  
+
+# home
+ln -s dotfiles/.tmux.conf .tmux.conf

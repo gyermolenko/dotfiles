@@ -143,6 +143,7 @@ alias tmuxsw="./tmux_setup.sh"
 alias tmuxsh="./tmux_setup_home.sh"
 alias ag="ag --color-match 1\;31"
 # export TERM=xterm-256color
+# alias sqlite="rlwrap -a -N -i sqlite3"
 
 # Colored man pages: http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
 # Less Colors for Man Pages

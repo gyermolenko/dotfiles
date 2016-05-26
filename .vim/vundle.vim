@@ -71,7 +71,7 @@ Plugin 'pangloss/vim-javascript'
 
 " required for kana textobjs, e.g. entire and line
 Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-entire'
+" Plugin 'kana/vim-textobj-entire'
 
 Plugin 'exu/pgsql.vim'
 
