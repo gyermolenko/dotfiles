@@ -340,7 +340,7 @@ cnoremap <C-p> <Up>
 " and now i have vim-asterisk
 " vnoremap // y/<C-R>"<CR>
 
-" since i use q for buf-switch
+" since i use q for other things
 nnoremap ! q
 
 
