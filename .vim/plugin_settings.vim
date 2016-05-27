@@ -254,8 +254,9 @@ vmap <localleader>p <Plug>yankstack_substitute_older_paste
 vmap <localleader>n <Plug>yankstack_substitute_newer_paste
 
 " === operator-flashy ===
-call yankstack#setup()
-map y <Plug>(operator-flashy)
+" investigate
+" call yankstack#setup()
+" map y <Plug>(operator-flashy)
 
 
 " === Special mappings ===
@@ -295,8 +296,10 @@ xmap t <Plug>Sneak_t
 xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
-nmap - <Plug>SneakPrevious
-xmap - <Plug>SneakPrevious
+" nmap - <Plug>SneakPrevious
+" xmap - <Plug>SneakPrevious
+nmap _ <Plug>SneakPrevious
+xmap _ <Plug>SneakPrevious
 
 " === Surround ===
 " call yankstack#setup()
@@ -333,7 +336,7 @@ nnoremap <silent> [r :CtrlSpaceGoUp<CR>
 
 " === Ack =========
 nnoremap <leader>ac :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags 
-nnoremap <leader>ar :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags "<c-r>*"
+nnoremap <leader>av :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags "<c-r>+"<cr>
 nnoremap <leader>Ac :Ack --ignore-file=ext:js 
 nnoremap <leader>ag :Ag --ignore-dir={env,.env,feeds/mysql} 
 nnoremap <leader>Ag :Ag 

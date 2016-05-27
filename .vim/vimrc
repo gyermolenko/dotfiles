@@ -203,8 +203,8 @@ nnoremap <leader><Tab> :tabe<cr>
 nnoremap <leader>er :e $MYVIMRC<CR>
 nnoremap <leader>ev :e ~/.vim/vundle.vim<CR>
 nnoremap <leader>ep :e ~/.vim/plugin_settings.vim<CR>
-nnoremap <leader>en :e /media/data/Dropbox/vimnotes<CR>
-nnoremap <leader>ew :e /media/data/Dropbox/vimworknotes<CR>
+nnoremap <leader>en :e /media/data/Dropbox/vimnotes.md<CR>
+nnoremap <leader>ew :e /media/data/Dropbox/vimworknotes.md<CR>
 nnoremap <leader>et :e ~/.tmux.conf<CR>
 nnoremap <leader>ez :e ~/.zshrc<CR>
 " Reload vimrc
@@ -259,14 +259,14 @@ noremap H ^
 noremap L $
 vnoremap L g_
 
-nnoremap ) L
-nnoremap ( H
-vnoremap ) L
-vnoremap ( H
-" nnoremap ) }
-" nnoremap ( {
-" vnoremap ) }zz
-" vnoremap ( {zz
+" nnoremap ) L
+" nnoremap ( H
+" vnoremap ) L
+" vnoremap ( H
+nnoremap ) 3}
+nnoremap ( 3{
+vnoremap ) 3}
+vnoremap ( 3{
 
 nnoremap ' `
 vnoremap ' `
@@ -338,6 +338,11 @@ cnoremap <C-p> <Up>
 
 " since i use q for other things
 nnoremap ! q
+
+nnoremap <leader>v /<c-r>+<cr>
+nnoremap U yiw:echo "copied: <c-r>+"<cr>
+nnoremap 0 V
+
 
 
 " ========== end of Custom mappings ==================================

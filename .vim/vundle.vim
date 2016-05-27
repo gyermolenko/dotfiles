@@ -89,7 +89,7 @@ Plugin 'teranex/jk-jumps.vim'
 
 " library plugin to provide an easy way to define your own operator
 Plugin 'kana/vim-operator-user'
-Plugin 'haya14busa/vim-operator-flashy'
+" Plugin 'haya14busa/vim-operator-flashy'
 
 " visual marks in gutter
 Plugin 'kshenoy/vim-signature'
