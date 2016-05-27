@@ -149,6 +149,8 @@ let NERDTreeWinSize = 36
 let g:NERDTreeMapHelp = '<F2>'
 " i want to use Sneak in NTree
 let g:NERDTreeMapOpenVSplit = '\s'
+" and also easymotion
+let g:NERDTreeMapQuit = '\q'
 
 " === SuperTab ===
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
@@ -265,41 +267,6 @@ vmap <localleader>n <Plug>yankstack_substitute_newer_paste
 " nnoremap ' :
 " vnoremap ' :
 
-
-" === Sneak ===
-" nmap ) <Plug>SneakNext
-" nmap ( <Plug>SneakPrevious
-" vmap ) <Plug>SneakNext
-" vmap ( <Plug>SneakPrevious
-" direction
-let g:sneak#absolute_dir = 0
-" Case sensitivity is determined by 'ignorecase' and 'smartcase'
-let g:sneak#use_ic_scs = 1
-" hi link SneakPluginTarget ErrorMsg
-hi link SneakPluginScope  Comment
-" highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
-" none - MAGENTA
-highlight SneakPluginTarget ctermfg=NONE ctermbg=NONE cterm=NONE
-" white
-highlight SneakPluginTarget ctermfg=15 ctermbg=NONE cterm=NONE
-" bright blue and underlined
-" highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
-nmap f <Plug>Sneak_f
-nmap F <Plug>Sneak_F
-xmap f <Plug>Sneak_f
-xmap F <Plug>Sneak_F
-omap f <Plug>Sneak_f
-omap F <Plug>Sneak_F
-nmap t <Plug>Sneak_t
-nmap T <Plug>Sneak_T
-xmap t <Plug>Sneak_t
-xmap T <Plug>Sneak_T
-omap t <Plug>Sneak_t
-omap T <Plug>Sneak_T
-" nmap - <Plug>SneakPrevious
-" xmap - <Plug>SneakPrevious
-nmap _ <Plug>SneakPrevious
-xmap _ <Plug>SneakPrevious
 
 " === Surround ===
 " call yankstack#setup()
@@ -424,17 +391,52 @@ let g:jk_jumps_minimum_lines = 2
 let g:go_fmt_autosave = 0
 let g:go_doc_keywordprg_enabled = 0
 
+
 " === vim-asterisk ===
 map * <Plug>(asterisk-*)
 map # <Plug>(asterisk-#)
 
+
 " === auto-pairs ===
 let g:AutoPairsOnlyWhitespace = 1
 
+
+" === Sneak ===
+" direction
+let g:sneak#absolute_dir = 0
+" Case sensitivity is determined by 'ignorecase' and 'smartcase'
+let g:sneak#use_ic_scs = 1
+" hi link SneakPluginTarget ErrorMsg
+hi link SneakPluginScope  Comment
+" highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
+" none - MAGENTA
+highlight SneakPluginTarget ctermfg=NONE ctermbg=NONE cterm=NONE
+" white
+highlight SneakPluginTarget ctermfg=15 ctermbg=NONE cterm=NONE
+" bright blue and underlined
+" highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
+
+" nmap f <Plug>Sneak_f
+" nmap F <Plug>Sneak_F
+" xmap f <Plug>Sneak_f
+" xmap F <Plug>Sneak_F
+" omap f <Plug>Sneak_f
+" omap F <Plug>Sneak_F
+" nmap t <Plug>Sneak_t
+" nmap T <Plug>Sneak_T
+" xmap t <Plug>Sneak_t
+" xmap T <Plug>Sneak_T
+" omap t <Plug>Sneak_t
+" omap T <Plug>Sneak_T
+
+" nmap - <Plug>SneakPrevious
+" xmap - <Plug>SneakPrevious
+nmap _ <Plug>SneakPrevious
+xmap _ <Plug>SneakPrevious
+
+
 " === Easy-motion
 map <Leader>\ <Plug>(easymotion-prefix)
-map <localleader>j V<Plug>(easymotion-j)
-map <localleader>k V<Plug>(easymotion-k)
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_do_shade = 1
 let g:EasyMotion_use_smartsign_us = 1
@@ -449,9 +451,29 @@ let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj;'
 " vmap s <Plug>(easymotion-s)
 
 nmap q <Plug>(easymotion-f)
-vmap q <Plug>(easymotion-f)
+xmap q <Plug>(easymotion-f)
+omap q <Plug>(easymotion-f)
+" vmap q <Plug>(easymotion-f)
 nmap Q <Plug>(easymotion-F)
-vmap Q <Plug>(easymotion-F)
+xmap Q <Plug>(easymotion-F)
+omap Q <Plug>(easymotion-F)
+" vmap Q <Plug>(easymotion-F)
+map <localleader>j V<Plug>(easymotion-j)
+map <localleader>k V<Plug>(easymotion-k)
+" map <localleader>l v<Plug>(easymotion-fl)
+" map <localleader>h v<Plug>(easymotion-Fl)
+nmap f <Plug>(easymotion-fl)
+xmap f <Plug>(easymotion-fl)
+omap f <Plug>(easymotion-fl)
+nmap F <Plug>(easymotion-Fl)
+xmap F <Plug>(easymotion-Fl)
+omap F <Plug>(easymotion-Fl)
+nmap t <Plug>(easymotion-tl)
+xmap t <Plug>(easymotion-tl)
+omap t <Plug>(easymotion-tl)
+nmap T <Plug>(easymotion-Tl)
+xmap T <Plug>(easymotion-Tl)
+omap T <Plug>(easymotion-Tl)
 " works similarly to smartcase option for global searches
 " trying to make it mose useful for distant places and Colemak
 " let g:EasyMotion_keys = 'tnseriaocmfuplwyx,dhvkgjzq:/b[904TNSERIAOCMFUPLWYXDHVKGJZQ'
