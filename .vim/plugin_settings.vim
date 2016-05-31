@@ -138,6 +138,7 @@ let g:ctrlp_custom_ignore = {
 
 " === NerdTree ===
 map <F1> :NERDTreeToggle<CR>
+nnoremap <leader>x :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let NERDTreeShowHidden = 1
@@ -275,9 +276,10 @@ xmap Y <Plug>VSurround
 
 
 " === ReplaceWithRegister ===
-" nmap R gri
+" nmap - griw
+nnoremap - yiw:echo "copied: <c-r>+"<cr>
+nmap _ griw
 nmap K gri
-" nmap M gri
 
 
 " === Unimpaired =============
@@ -390,6 +392,7 @@ let g:jk_jumps_minimum_lines = 2
 " === vim-go ===
 let g:go_fmt_autosave = 0
 let g:go_doc_keywordprg_enabled = 0
+" let g:go_bin_path = "$HOME/gocode"
 
 
 " === vim-asterisk ===
@@ -431,8 +434,8 @@ highlight SneakPluginTarget ctermfg=15 ctermbg=NONE cterm=NONE
 
 " nmap - <Plug>SneakPrevious
 " xmap - <Plug>SneakPrevious
-nmap _ <Plug>SneakPrevious
-xmap _ <Plug>SneakPrevious
+" nmap _ <Plug>SneakPrevious
+" xmap _ <Plug>SneakPrevious
 
 
 " === Easy-motion

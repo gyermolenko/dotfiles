@@ -62,7 +62,7 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'michaeljsmith/vim-indent-object'
 " Plugin 'Yggdroot/indentLine'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'maxbrunsfeld/vim-yankstack'
+" Plugin 'maxbrunsfeld/vim-yankstack'
 
 " Plugin 'jiangmiao/auto-pairs'
 Plugin 'eapache/auto-pairs'
@@ -71,7 +71,7 @@ Plugin 'pangloss/vim-javascript'
 
 " required for kana textobjs, e.g. entire and line
 Plugin 'kana/vim-textobj-user'
-" Plugin 'kana/vim-textobj-entire'
+Plugin 'kana/vim-textobj-entire'
 
 Plugin 'exu/pgsql.vim'
 

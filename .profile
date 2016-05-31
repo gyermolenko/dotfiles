@@ -23,7 +23,7 @@ fi
 
 # Go
 export GOPATH=$HOME/gocode
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Tmux
 export PATH=$PATH:$HOME/tmux
