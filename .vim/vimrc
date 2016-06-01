@@ -97,12 +97,6 @@ set scrolljump=1
 set sidescroll=1
 set sidescrolloff=10
 
-" scroll by n lines at once
-nnoremap <C-e> 5<C-e>
-nnoremap <C-y> 5<C-y>
-vnoremap <C-e> 5<C-e>
-vnoremap <C-y> 5<C-y>
-
 set showtabline=2
 
 " 00 padded digits considered decimal, not octal. So now C-a for 007 does 008 instead of 010
@@ -130,10 +124,6 @@ set nopaste
 " Make < and > match as well
 " set matchpairs+=<:>
 set matchpairs=(:),[:],{:}
-" easier bracket matching
-" map <tab> %
-"noremap % v%
-
 
 
 " === Display ========================
@@ -183,7 +173,7 @@ set listchars=nbsp:␣,extends:…,tab:»\ ,trail:·
 set showbreak=…\ 
 " set showbreak=▹\ 
 " set showbreak=↪
-" Allow for cursor beyond last character
+" this setting can enable cursor beyond last row character
 set virtualedit=block
 
 
@@ -220,7 +210,13 @@ nnoremap <Leader>d :Bclose!<CR>
 " Kill window
 " nnoremap <Leader>dt :q<cr>
 
+" filetype related
+nnoremap <leader>fh :set ft=html<CR>
+nnoremap <leader>fj :set ft=htmljinja<CR>
+nnoremap <leader>fd :set ft=htmldjango<CR>
+nnoremap <leader>fp :set ft=python<CR>
 
+" tab navigation
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -229,19 +225,11 @@ nnoremap <leader>5 5gt
 nnoremap <leader>6 6gt
 nnoremap <leader>7 7gt
 
-" vnoremap <leader>1 1gt
-" vnoremap <leader>2 2gt
-" vnoremap <leader>3 3gt
-" vnoremap <leader>4 4gt
-" vnoremap <leader>5 5gt
-" vnoremap <leader>6 6gt
+" ==== localleader ====
+" ================================================
 
 " clear normal/visual mode highlighting
 nnoremap <localleader><space> :noh<CR>
-
-" switch to alternate buffer
-" nnoremap <localleader>o <C-^>
-nnoremap <c-p> <C-^>
 
 " Show trailing whitespace:
 nnoremap <localleader>h<space> /\s\+$<cr>
@@ -259,10 +247,6 @@ noremap H ^
 noremap L $
 vnoremap L g_
 
-" nnoremap ) L
-" nnoremap ( H
-" vnoremap ) L
-" vnoremap ( H
 " nnoremap ) 3}
 " nnoremap ( 3{
 " vnoremap ) 3}
@@ -295,27 +279,28 @@ nnoremap <Up> gk
 
 " inoremap jk <Esc>
 
-" Experimental
-" delete one word to the right
-" inoremap jj <Esc>ldei
-
-
 " highlight last inserted text
-" nnoremap gV `[v`]
-" nnoremap gh `[v`]
-" gl is vacant
 nnoremap gs `[v`]
+" gV `[v`] - inconvenient
+" gl/gh are vacant
+
 " horizontal scroll
 nnoremap zh 30zh
 nnoremap zl 30zl
 
 " Split lines on space. opposit to J
-nnoremap " f<space>r<CR>
+nnoremap " f<space>r<CR>l
 
 " Save
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <Esc><F2>
+
+" scroll by n lines at once
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
+vnoremap <C-e> 5<C-e>
+vnoremap <C-y> 5<C-y>
 
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -323,13 +308,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" c-f is for opened buffers
-" nnoremap <C-f> L
-" nnoremap <C-b> M
-" inoremap <C-b> H
-
-" inoremap <c-a> <esc>I
-" inoremap <c-e> <esc>A
 inoremap <c-a> <Home>
 inoremap <c-e> <End>
 cnoremap <c-a> <home>
@@ -339,6 +317,9 @@ inoremap <C-d> <Del>
 " by default those keys scroll history up-down with no respect to prefix
 cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
+
+" switch to alternate buffer
+nnoremap <c-p> <C-^>
 
 " search for visually selected text
 " and now i have vim-asterisk
@@ -351,14 +332,10 @@ nnoremap <leader>v /<c-r>+<cr>
 nnoremap 0 V
 
 
-
 " ========== end of Custom mappings ==================================
 " ===================================================================
 
 
-" like J for insert mode. Removes indentation and undo-es <cr> 
-" inoremap <C-\> <C-o>:left 0<Cr><BS>
-" easily substitutable with <c-w><c-w>
 
 
 " ==================== ctags ==================================
@@ -492,10 +469,6 @@ endfunction
 
 command! -nargs=0 Reg call Reg()
 
-" nmap <space>r :call Reg()<cr>
-" vmap <space>r :call Reg()<cr>
-nmap <localleader>r :call Reg()<cr>
-vmap <localleader>r :call Reg()<cr>
 " ===========================================
 
 
@@ -531,7 +504,7 @@ autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
 autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
 
 autocmd FileType python,javascript setlocal colorcolumn=80
-"I don't want the docstring window to popup during completion
+" do not show docstring window during completion
 autocmd FileType python setlocal completeopt-=preview
 
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
@@ -544,11 +517,6 @@ autocmd FileType sql setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType xml,html,htmljinja,htmldjango set matchpairs=(:),[:],{:}
 
 autocmd BufRead,BufNewFile *.go setlocal nolist
-
-nnoremap <leader>fh :set ft=html<CR>
-nnoremap <leader>fj :set ft=htmljinja<CR>
-nnoremap <leader>fd :set ft=htmldjango<CR>
-nnoremap <leader>fp :set ft=python<CR>
 
 augroup ft_html
     au!

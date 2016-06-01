@@ -176,3 +176,14 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
 
 
+" === CtrlP ===
+" let g:ctrlp_cmd = 'call CallCtrlP()'
+
+" func! CallCtrlP()
+"     if exists('s:called_ctrlp')
+"         CtrlPLastMode
+"     else
+"         let s:called_ctrlp = 1
+"         CtrlPMRU
+"     endif
+" endfunc

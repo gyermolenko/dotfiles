@@ -77,15 +77,6 @@ let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#tabline#enabled = 0
 " let g:airline#extensions#tabline#show_close_button = 0
-" let g:airline#extensions#tabline#formatter = 'default'
-" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-" let g:airline#extensions#tabline#show_buffers = 1
-" let g:airline#extensions#tabline#fnamemod = ':t'
-" let g:airline#extensions#tabline#fnamecollapse=0
-" let g:airline#extensions#tabline#fnametruncate=0
-" let g:airline#extensions#tabline#tab_nr_type = 0
-" let g:airline#extensions#tabline#buffer_idx_mode = 1
-" let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline_section_z = ""
 " let g:airline_section_y="%y"
 let g:airline_section_y = ""
@@ -119,21 +110,10 @@ let g:ctrlp_bufname_mod = ':~:.:p'
 let g:ctrlp_bufpath_mod = ''
 " let g:ctrlp_bufpath_mod = ':~:.:h'
 
-" let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.git|venv|env|\.env)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-" let g:ctrlp_cmd = 'call CallCtrlP()'
-
-" func! CallCtrlP()
-"     if exists('s:called_ctrlp')
-"         CtrlPLastMode
-"     else
-"         let s:called_ctrlp = 1
-"         CtrlPMRU
-"     endif
-" endfunc
 
 
 " === NerdTree ===
@@ -247,8 +227,6 @@ let g:tagbar_foldlevel = 0
 
 " === Yankstack ===
 let g:yankstack_map_keys = 0
-" nmap <F5> <Plug>yankstack_substitute_older_paste
-" nmap <F6> <Plug>yankstack_substitute_newer_paste
 " wo this line mappings on s/S will be destroyed
 let g:yankstack_yank_keys = ['y', 'd', 'D']
 nmap <localleader>p <Plug>yankstack_substitute_older_paste
@@ -413,7 +391,7 @@ let g:sneak#use_ic_scs = 1
 hi link SneakPluginScope  Comment
 " highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
 " none - MAGENTA
-highlight SneakPluginTarget ctermfg=NONE ctermbg=NONE cterm=NONE
+" highlight SneakPluginTarget ctermfg=NONE ctermbg=NONE cterm=NONE
 " white
 highlight SneakPluginTarget ctermfg=15 ctermbg=NONE cterm=NONE
 " bright blue and underlined
@@ -449,17 +427,18 @@ let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj;'
 " hi link EasyMotionTarget2First clever_f
 " hi link EasyMotionTarget2Second clever_f
 " hi link EasyMotionMoveHL Search
-" nnoremap S s
+" hi EasyMotionTarget2First ctermbg=none ctermfg=red
+" hi EasyMotionTarget2Second ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
 " nmap s <Plug>(easymotion-s)
 " vmap s <Plug>(easymotion-s)
 
 nmap q <Plug>(easymotion-f)
 xmap q <Plug>(easymotion-f)
-omap q <Plug>(easymotion-f)
+omap q <Plug>(easymotion-t)
 " vmap q <Plug>(easymotion-f)
 nmap Q <Plug>(easymotion-F)
 xmap Q <Plug>(easymotion-F)
-omap Q <Plug>(easymotion-F)
+omap Q <Plug>(easymotion-T)
 " vmap Q <Plug>(easymotion-F)
 map <localleader>j V<Plug>(easymotion-j)
 map <localleader>k V<Plug>(easymotion-k)
@@ -477,6 +456,8 @@ omap t <Plug>(easymotion-tl)
 nmap T <Plug>(easymotion-Tl)
 xmap T <Plug>(easymotion-Tl)
 omap T <Plug>(easymotion-Tl)
+" nmap s <Plug>(easymotion-f2)
+" nmap S <Plug>(easymotion-F2)
 " works similarly to smartcase option for global searches
 " trying to make it mose useful for distant places and Colemak
 " let g:EasyMotion_keys = 'tnseriaocmfuplwyx,dhvkgjzq:/b[904TNSERIAOCMFUPLWYXDHVKGJZQ'
