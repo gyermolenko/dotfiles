@@ -299,10 +299,10 @@ nmap <leader>z :update<CR>
 vmap <leader>z <Esc><leader>gv
 
 " scroll by n lines at once
-nnoremap <C-e> 10<C-e>
-nnoremap <C-y> 10<C-y>
-vnoremap <C-e> 10<C-e>
-vnoremap <C-y> 10<C-y>
+nnoremap <C-e> ^5<C-e>5j
+nnoremap <C-y> ^5<C-y>5k
+vnoremap <C-e> 5<C-e>
+vnoremap <C-y> 5<C-y>
 
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
