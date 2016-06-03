@@ -423,12 +423,15 @@ let g:EasyMotion_do_shade = 1
 let g:EasyMotion_use_smartsign_us = 1
 let g:EasyMotion_off_screen_search = 0
 let g:EasyMotion_smartcase = 1
-let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj;'
+" let g:EasyMotion_keys = 'jkomcasdhlqwertyuipbgzxvn;f'
+" let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj;'
+let g:EasyMotion_keys = 'koluipnewcmh,qrtyzxvbasdgjf;'
+
 " hi link EasyMotionTarget2First clever_f
 " hi link EasyMotionTarget2Second clever_f
 " hi link EasyMotionMoveHL Search
-" hi EasyMotionTarget2First ctermbg=none ctermfg=red
-" hi EasyMotionTarget2Second ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
+hi EasyMotionTarget2First ctermbg=NONE ctermfg=red cterm=bold
+" hi EasyMotionTarget2Second ctermfg=39 ctermbg=NONE cterm=bold
 " nmap s <Plug>(easymotion-s)
 " vmap s <Plug>(easymotion-s)
 

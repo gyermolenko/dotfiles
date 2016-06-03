@@ -295,6 +295,8 @@ nnoremap " f<space>r<CR>l
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <Esc><F2>
+nmap <leader>z :update<CR>
+vmap <leader>z <Esc><leader>gv
 
 " scroll by n lines at once
 nnoremap <C-e> 5<C-e>
