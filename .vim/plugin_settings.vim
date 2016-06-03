@@ -425,7 +425,7 @@ let g:EasyMotion_off_screen_search = 0
 let g:EasyMotion_smartcase = 1
 " let g:EasyMotion_keys = 'jkomcasdhlqwertyuipbgzxvn;f'
 " let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj;'
-let g:EasyMotion_keys = 'koluipnewcmh,qrtyzxvbasdgjf;'
+let g:EasyMotion_keys = 'koilcmhewaunp,qrzxtyvbsdgjf;'
 
 " hi link EasyMotionTarget2First clever_f
 " hi link EasyMotionTarget2Second clever_f
