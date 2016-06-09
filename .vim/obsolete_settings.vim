@@ -1,5 +1,6 @@
 " ======================================================
-" === vundles ===
+" ======================================================
+"                   vundles
 " ======================================================
 " ======================================================
 
@@ -27,9 +28,18 @@
 
 " Plugin 'nathanaelkane/vim-indent-guides.git'
 
+" Plugin 'Shougo/unite.vim'
+" Plugin 'Shougo/neomru.vim'
+" Plugin 'Shougo/vimproc.vim'
+
+" ------------------------------------------------------
+" ------------------------------------------------------
+
+
 
 " ======================================================
-" === .vimrc ===
+" ======================================================
+"                   .vimrc
 " ======================================================
 " ======================================================
 
@@ -85,11 +95,15 @@ augroup END
 
 " autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
-" ===========================================
+
+" ------------------------------------------------------
+" ------------------------------------------------------
+
 
 
 " ======================================================
-" === plugins settings ===
+" ======================================================
+"                Plugins settings
 " ======================================================
 " ======================================================
 
@@ -174,6 +188,64 @@ let g:easytags_python_enabled = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
+
+
+" === Unite ===
+let g:unite_data_directory = '~/.vim/unite'
+let g:unite_source_grep_command = 'ack'
+" let g:unite_source_history_yank_enable=1
+" let g:unite_prompt='» '
+" -prompt=»\  
+" nnoremap <C-f> :Unite -direction=below -start-insert buffer<cr>
+" need to exclude env git dirs
+
+" nnoremap <localleader>. :<C-u>Unite -direction=below -start-insert file_rec/async<cr>
+" nnoremap <localleader>, :<C-u>Unite -direction=below -buffer-name=mru -start-insert file_mru<cr>
+" nnoremap <localleader>l :<C-u>Unite -buffer-name=line -start-insert line<cr>
+
+" nnoremap <localleader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+" nnoremap <localleader>y :<C-u>Unite -direction=below history/yank<CR>
+
+" nnoremap <leader>vs :Unite grep:.<cr>
+" :Unite line:all
+" call unite#custom#profile('default', 'context', {
+"  \   'start_insert': 1,
+"  \   'winheight': 10,
+"  \   'direction': 'botright',
+"  })
+
+" let g:unite_source_outline_highlight = {
+" 		      \ 'comment' : 'Comment',
+" 		      \ 'expanded': 'Constant',
+" 		      \ 'function': 'Function',
+" 		      \ 'id'      : 'Special',
+" 		      \ 'macro'   : 'Macro',
+" 		      \ 'method'  : 'Function',
+" 		      \ 'normal'  : g:unite_abbr_highlight,
+" 		      \ 'package' : g:unite_abbr_highlight,
+" 		      \ 'special' : 'Macro',
+" 		      \ 'type'    : 'Type',
+" 		      \ 'level_1' : 'Type',
+" 		      \ 'level_2' : 'PreProc',
+" 		      \ 'level_3' : 'Identifier',
+" 		      \ 'level_4' : 'Constant',
+" 		      \ 'level_5' : 'Special',
+" 		      \ 'level_6' : g:unite_abbr_highlight,
+" 		      \ 'parameter_list': g:unite_abbr_highlight,
+" 		      \ }
+
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Play nice with supertab
+  let b:SuperTabDisabled=1
+  " Enable navigation with control-j and control-k in insert mode
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+  imap <buffer> <esc>   <esc><Plug>(unite_all_exit)
+endfunction
+
+" ====== end of Unite settings =======
 
 
 " === CtrlP ===

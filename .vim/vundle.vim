@@ -75,10 +75,6 @@ Plugin 'kana/vim-textobj-entire'
 
 Plugin 'exu/pgsql.vim'
 
-" Plugin 'Shougo/unite.vim'
-" Plugin 'Shougo/neomru.vim'
-" Plugin 'Shougo/vimproc.vim'
-
 Plugin 'rbgrouleff/bclose.vim'
 
 Plugin 'justinmk/vim-sneak'

@@ -295,8 +295,9 @@ nnoremap " f<space>r<CR>l
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <Esc><F2>
-nmap <leader>z :update<CR>
-vmap <leader>z <Esc><leader>gv
+nmap <leader>t :update<CR>
+vmap <leader>t <Esc><leader>gv
+nnoremap <leader>z :NERDTreeToggle<CR>
 
 " scroll by n lines at once
 nnoremap <C-e> ^5<C-e>5j
@@ -315,6 +316,8 @@ inoremap <c-e> <End>
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 inoremap <C-d> <Del>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
 
 " by default those keys scroll history up-down with no respect to prefix
 cnoremap <C-n> <Down>

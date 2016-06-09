@@ -71,16 +71,17 @@ highlight Pmenu ctermbg=19 ctermfg=11
 
 
 " === Airline
-" let g:airline_theme='luna'
 let g:airline_theme='badwolf'
 let g:airline_powerline_fonts = 1
-
 let g:airline#extensions#tabline#enabled = 0
-" let g:airline#extensions#tabline#show_close_button = 0
-let g:airline_section_z = ""
+
+" (fileencoding, fileformat)
 " let g:airline_section_y="%y"
 let g:airline_section_y = ""
+" (percentage, line number, column number)
+let g:airline_section_z = ""
 let g:airline_section_warning = ""
+
 let g:airline_mode_map = {
       \ '__' : '-',
       \ 'n'  : 'N',
@@ -118,7 +119,6 @@ let g:ctrlp_custom_ignore = {
 
 " === NerdTree ===
 map <F1> :NERDTreeToggle<CR>
-nnoremap <leader>x :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let NERDTreeShowHidden = 1
@@ -191,9 +191,9 @@ let g:CtrlSpaceDefaultMappingKey = "<C-Space>"
 let g:CtrlSpaceSaveWorkspaceOnExit = 0
 let g:CtrlSpaceLoadLastWorkspaceOnStart = 0
 let g:CtrlSpaceUseTabline = 1
-nnoremap <leader>ss :CtrlSpaceSaveWorkspace workspace_1<CR>
-nnoremap <leader>so :CtrlSpaceLoadWorkspace workspace_1<CR>
-nnoremap <leader>sp :CtrlSpaceLoadWorkspace add_provider<CR>
+nnoremap <leader>ww :CtrlSpaceSaveWorkspace workspace_1<CR>
+nnoremap <leader>wo :CtrlSpaceLoadWorkspace workspace_1<CR>
+nnoremap <leader>wp :CtrlSpaceLoadWorkspace add_provider<CR>
 " let g:CtrlSpaceKeys = { "Buffer": { "a": <cr> } }vO
 let g:CtrlSpaceIgnoredFiles = '\v(tmp|temp|env|.env)[\/]'
 " hi CtrlSpaceSearch guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
@@ -274,6 +274,7 @@ nnoremap ]d <down>dd<up>
 nnoremap [d <up>dd
 
 nnoremap com :SignatureToggle<cr>
+nnoremap cog :GitGutterToggle<cr>
 
 " === CtrlSpace [2] ===
 " because of unimpaired ]b
@@ -288,63 +289,6 @@ nnoremap <leader>Ac :Ack --ignore-file=ext:js
 nnoremap <leader>ag :Ag --ignore-dir={env,.env,feeds/mysql} 
 nnoremap <leader>Ag :Ag 
 
-
-" === Unite ===
-let g:unite_data_directory = '~/.vim/unite'
-let g:unite_source_grep_command = 'ack'
-" let g:unite_source_history_yank_enable=1
-" let g:unite_prompt='» '
-" -prompt=»\  
-" nnoremap <C-f> :Unite -direction=below -start-insert buffer<cr>
-" need to exclude env git dirs
-
-" nnoremap <localleader>. :<C-u>Unite -direction=below -start-insert file_rec/async<cr>
-" nnoremap <localleader>, :<C-u>Unite -direction=below -buffer-name=mru -start-insert file_mru<cr>
-" nnoremap <localleader>l :<C-u>Unite -buffer-name=line -start-insert line<cr>
-
-" nnoremap <localleader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-" nnoremap <localleader>y :<C-u>Unite -direction=below history/yank<CR>
-
-" nnoremap <leader>vs :Unite grep:.<cr>
-" :Unite line:all
-" call unite#custom#profile('default', 'context', {
-"  \   'start_insert': 1,
-"  \   'winheight': 10,
-"  \   'direction': 'botright',
-"  })
-
-" let g:unite_source_outline_highlight = {
-" 		      \ 'comment' : 'Comment',
-" 		      \ 'expanded': 'Constant',
-" 		      \ 'function': 'Function',
-" 		      \ 'id'      : 'Special',
-" 		      \ 'macro'   : 'Macro',
-" 		      \ 'method'  : 'Function',
-" 		      \ 'normal'  : g:unite_abbr_highlight,
-" 		      \ 'package' : g:unite_abbr_highlight,
-" 		      \ 'special' : 'Macro',
-" 		      \ 'type'    : 'Type',
-" 		      \ 'level_1' : 'Type',
-" 		      \ 'level_2' : 'PreProc',
-" 		      \ 'level_3' : 'Identifier',
-" 		      \ 'level_4' : 'Constant',
-" 		      \ 'level_5' : 'Special',
-" 		      \ 'level_6' : g:unite_abbr_highlight,
-" 		      \ 'parameter_list': g:unite_abbr_highlight,
-" 		      \ }
-
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-  imap <buffer> <esc>   <esc><Plug>(unite_all_exit)
-endfunction
-
-" ====== end of Unite settings =======
 
 
 " === Bclose ===
@@ -389,6 +333,8 @@ let g:sneak#absolute_dir = 0
 let g:sneak#use_ic_scs = 1
 " hi link SneakPluginTarget ErrorMsg
 hi link SneakPluginScope  Comment
+" because of easymotion
+let g:sneak#textobject_z = 0
 " highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
 " none - MAGENTA
 " highlight SneakPluginTarget ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -397,18 +343,19 @@ highlight SneakPluginTarget ctermfg=15 ctermbg=NONE cterm=NONE
 " bright blue and underlined
 " highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
 
-" nmap f <Plug>Sneak_f
-" nmap F <Plug>Sneak_F
-" xmap f <Plug>Sneak_f
-" xmap F <Plug>Sneak_F
-" omap f <Plug>Sneak_f
-" omap F <Plug>Sneak_F
-" nmap t <Plug>Sneak_t
-" nmap T <Plug>Sneak_T
-" xmap t <Plug>Sneak_t
-" xmap T <Plug>Sneak_T
-" omap t <Plug>Sneak_t
-" omap T <Plug>Sneak_T
+" better than vanilla f/t: <c-o> returns to starting point; smartcase search; highligh next matches in line
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+nmap t <Plug>Sneak_t
+nmap T <Plug>Sneak_T
+xmap t <Plug>Sneak_t
+xmap T <Plug>Sneak_T
+omap t <Plug>Sneak_t
+omap T <Plug>Sneak_T
 
 " nmap - <Plug>SneakPrevious
 " xmap - <Plug>SneakPrevious
@@ -425,7 +372,7 @@ let g:EasyMotion_off_screen_search = 0
 let g:EasyMotion_smartcase = 1
 " let g:EasyMotion_keys = 'jkomcasdhlqwertyuipbgzxvn;f'
 " let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj;'
-let g:EasyMotion_keys = 'koilcmhewaunp,qrzxtyvbsdgjf;'
+let g:EasyMotion_keys = 'jkloimchgewa,unpqrzxvtybsdf;'
 
 " hi link EasyMotionTarget2First clever_f
 " hi link EasyMotionTarget2Second clever_f
@@ -437,30 +384,34 @@ hi EasyMotionTarget2First ctermbg=NONE ctermfg=red cterm=bold
 
 nmap q <Plug>(easymotion-f)
 xmap q <Plug>(easymotion-f)
-omap q <Plug>(easymotion-t)
-" vmap q <Plug>(easymotion-f)
+omap q <Plug>(easymotion-f)
+omap z <Plug>(easymotion-t)
 nmap Q <Plug>(easymotion-F)
 xmap Q <Plug>(easymotion-F)
-omap Q <Plug>(easymotion-T)
+omap Q <Plug>(easymotion-F)
+omap Z <Plug>(easymotion-T)
+
 " vmap Q <Plug>(easymotion-F)
 map <localleader>j V<Plug>(easymotion-j)
 map <localleader>k V<Plug>(easymotion-k)
 " map <localleader>l v<Plug>(easymotion-fl)
 " map <localleader>h v<Plug>(easymotion-Fl)
-nmap f <Plug>(easymotion-fl)
-xmap f <Plug>(easymotion-fl)
-omap f <Plug>(easymotion-fl)
-nmap F <Plug>(easymotion-Fl)
-xmap F <Plug>(easymotion-Fl)
-omap F <Plug>(easymotion-Fl)
-nmap t <Plug>(easymotion-tl)
-xmap t <Plug>(easymotion-tl)
-omap t <Plug>(easymotion-tl)
-nmap T <Plug>(easymotion-Tl)
-xmap T <Plug>(easymotion-Tl)
-omap T <Plug>(easymotion-Tl)
-" nmap s <Plug>(easymotion-f2)
-" nmap S <Plug>(easymotion-F2)
+
+" nmap f <Plug>(easymotion-fl)
+" xmap f <Plug>(easymotion-fl)
+" omap f <Plug>(easymotion-fl)
+" nmap F <Plug>(easymotion-Fl)
+" xmap F <Plug>(easymotion-Fl)
+" omap F <Plug>(easymotion-Fl)
+" nmap t <Plug>(easymotion-tl)
+" xmap t <Plug>(easymotion-tl)
+" omap t <Plug>(easymotion-tl)
+" nmap T <Plug>(easymotion-Tl)
+" xmap T <Plug>(easymotion-Tl)
+" omap T <Plug>(easymotion-Tl)
+
+" nmap s <Plug>(easymotion-s2)
+" nmap S <Plug>(easymotion-s2)
 " works similarly to smartcase option for global searches
 " trying to make it mose useful for distant places and Colemak
 " let g:EasyMotion_keys = 'tnseriaocmfuplwyx,dhvkgjzq:/b[904TNSERIAOCMFUPLWYXDHVKGJZQ'
