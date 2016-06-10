@@ -97,6 +97,8 @@ Plugin 'haya14busa/vim-asterisk'
 Plugin 'mhinz/vim-hugefile'
 Plugin 'kana/vim-textobj-line'
 
+Plugin 'tweekmonster/django-plus.vim'
+
 " Plugin 'haya14busa/vim-easyoperator-line'
 " ====================================================================
 

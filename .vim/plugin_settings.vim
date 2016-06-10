@@ -64,10 +64,7 @@ let g:jedi#usages_command = "<F12>"
 " let g:jedi#rename_command = "<leader>r"
 let g:jedi#rename_command = ""
 let g:jedi#show_call_signatures = 2
-" highlight Pmenu ctermbg=57 ctermfg=3
-" highlight Pmenu ctermbg=4 ctermfg=11
 highlight Pmenu ctermbg=19 ctermfg=11
-" highlight clever_f ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
 
 
 " === Airline
@@ -357,41 +354,51 @@ xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
 
-" nmap - <Plug>SneakPrevious
-" xmap - <Plug>SneakPrevious
-" nmap _ <Plug>SneakPrevious
-" xmap _ <Plug>SneakPrevious
 
 
 " === Easy-motion
 map <Leader>\ <Plug>(easymotion-prefix)
 let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_do_shade = 1
+
 let g:EasyMotion_use_smartsign_us = 1
 let g:EasyMotion_off_screen_search = 0
 let g:EasyMotion_smartcase = 1
+
+let g:EasyMotion_do_shade = 0
+let g:EasyMotion_use_upper = 0
+" let g:EasyMotion_use_upper = 1
+
 " let g:EasyMotion_keys = 'jkomcasdhlqwertyuipbgzxvn;f'
 " let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj;'
-let g:EasyMotion_keys = 'jkloimchgewa,unpqrzxvtybsdf;'
 
-" hi link EasyMotionTarget2First clever_f
-" hi link EasyMotionTarget2Second clever_f
+let g:EasyMotion_keys = 'jkloimchgewa,unpqrzxvtybsdf;'
+" let g:EasyMotion_keys = 'HKLYUIONM,WERTXCVBASDGJF;'
+
 " hi link EasyMotionMoveHL Search
-hi EasyMotionTarget2First ctermbg=NONE ctermfg=red cterm=bold
+
+" hi EasyMotionTarget2First ctermbg=NONE ctermfg=red cterm=bold
+" hi EasyMotionTarget2Second ctermbg=NONE ctermfg=red cterm=bold
+
+hi EasyMotionTarget2First ctermfg=green ctermbg=none cterm=bold
+hi EasyMotionTarget2Second ctermfg=green ctermbg=none cterm=bold
+
+" magenta
+" hi EasyMotionTarget2First ctermfg=164 ctermbg=NONE cterm=bold
+" hi EasyMotionTarget2Second ctermfg=164 ctermbg=NONE cterm=bold
+
+" blue
 " hi EasyMotionTarget2Second ctermfg=39 ctermbg=NONE cterm=bold
-" nmap s <Plug>(easymotion-s)
-" vmap s <Plug>(easymotion-s)
+
 
 nmap q <Plug>(easymotion-f)
 xmap q <Plug>(easymotion-f)
 omap q <Plug>(easymotion-f)
-omap z <Plug>(easymotion-t)
 nmap Q <Plug>(easymotion-F)
 xmap Q <Plug>(easymotion-F)
 omap Q <Plug>(easymotion-F)
+omap z <Plug>(easymotion-t)
 omap Z <Plug>(easymotion-T)
 
-" vmap Q <Plug>(easymotion-F)
 map <localleader>j V<Plug>(easymotion-j)
 map <localleader>k V<Plug>(easymotion-k)
 " map <localleader>l v<Plug>(easymotion-fl)
@@ -410,8 +417,6 @@ map <localleader>k V<Plug>(easymotion-k)
 " xmap T <Plug>(easymotion-Tl)
 " omap T <Plug>(easymotion-Tl)
 
-" nmap s <Plug>(easymotion-s2)
-" nmap S <Plug>(easymotion-s2)
 " works similarly to smartcase option for global searches
 " trying to make it mose useful for distant places and Colemak
 " let g:EasyMotion_keys = 'tnseriaocmfuplwyx,dhvkgjzq:/b[904TNSERIAOCMFUPLWYXDHVKGJZQ'
