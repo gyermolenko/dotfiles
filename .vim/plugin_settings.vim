@@ -122,7 +122,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeSortHiddenFirst = 1
 let NERDTreeMinimalUI = 0
 let NERDTreeShowLineNumbers = 1
-let NERDTreeWinSize = 36
+let NERDTreeWinSize = 46
 " i want to use backward search in NTree
 let g:NERDTreeMapHelp = '<F2>'
 " i want to use Sneak in NTree

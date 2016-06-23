@@ -98,6 +98,7 @@ Plugin 'mhinz/vim-hugefile'
 Plugin 'kana/vim-textobj-line'
 
 Plugin 'tweekmonster/django-plus.vim'
+Plugin 'vim-utils/vim-vertical-move'
 
 " Plugin 'haya14busa/vim-easyoperator-line'
 " ====================================================================
