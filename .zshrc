@@ -106,6 +106,7 @@ bindkey '' fancy-ctrl-z
 # # ====================================
 
 alias l="ls -laF -h --group-directories-first"
+alias s="ls -laF -h --group-directories-first"
 alias lc="ls -AF -h --group-directories-first"
 # alias wd="pwd"
 # alias c.="cd .."
