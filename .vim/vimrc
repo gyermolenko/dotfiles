@@ -546,7 +546,7 @@ hi Error NONE
 " highlight MatchTag cterm=bold,underline ctermfg=11 ctermbg=235 
 highlight MatchTag cterm=bold,underline ctermfg=11 ctermbg=none 
 
-highlight MatchParen cterm=bold ctermbg=none ctermfg=164
+highlight MatchParen cterm=bold ctermbg=none ctermfg=164 guifg=magenta
 " highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=green
 " highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=39
 
