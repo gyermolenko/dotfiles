@@ -380,7 +380,7 @@ let g:EasyMotion_keys = 'jkloimchgewa,unpqrzxvtybsdf;'
 " hi EasyMotionTarget2Second ctermbg=NONE ctermfg=red cterm=bold
 
 hi EasyMotionTarget2First ctermfg=green ctermbg=none cterm=bold
-hi EasyMotionTarget2Second ctermfg=green ctermbg=none cterm=bold
+" hi EasyMotionTarget2Second ctermfg=green ctermbg=none cterm=bold
 
 " magenta
 " hi EasyMotionTarget2First ctermfg=164 ctermbg=NONE cterm=bold

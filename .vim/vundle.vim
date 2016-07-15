@@ -81,7 +81,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'tommcdo/vim-exchange'
 
 Plugin 'fatih/vim-go'
-Plugin 'teranex/jk-jumps.vim'
+" Plugin 'teranex/jk-jumps.vim'
 
 " library plugin to provide an easy way to define your own operator
 Plugin 'kana/vim-operator-user'

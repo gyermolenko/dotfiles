@@ -31,8 +31,8 @@ map м v
 map и b
 map т n
 map ь m
-map б ,
-map ю .
+" map б ,
+" map ю .
 
 map Ё ~
 map Й Q
@@ -58,7 +58,7 @@ map О J
 map Л K
 map Д L
 map Ж :
-map Э "
+" map Э "
 
 map Я Z
 map Ч X

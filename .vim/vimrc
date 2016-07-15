@@ -6,7 +6,7 @@ syntax on
 filetype plugin indent on
 packadd! matchit
 
-source ~/.vim/cyr_keys.vim
+" source ~/.vim/cyr_keys.vim
 
 " === Settings  ======================================================
 " ===================================================================
@@ -194,8 +194,10 @@ nnoremap <leader><Tab> :tabe<cr>
 nnoremap <leader>er :e $MYVIMRC<CR>
 nnoremap <leader>ev :e ~/.vim/vundle.vim<CR>
 nnoremap <leader>ep :e ~/.vim/plugin_settings.vim<CR>
-nnoremap <leader>en :e /media/data/Dropbox/vimnotes.md<CR>
-nnoremap <leader>ew :e /media/data/Dropbox/vimworknotes.md<CR>
+nnoremap <leader>en :e /media/data/Dropbox/vimnotes<CR>
+nnoremap <leader>ew :e /media/data/Dropbox/vimworknotes<CR>
+nnoremap <leader>eW :e /media/data/Dropbox/vimworknotes_deep<CR>
+nnoremap <leader>eS :e /media/data/Dropbox/vimworknotes_passwords<CR>
 nnoremap <leader>et :e ~/.tmux.conf<CR>
 nnoremap <leader>ez :e ~/.zshrc<CR>
 " Reload vimrc
@@ -264,21 +266,15 @@ vnoremap ' `
 " nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
 " nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 
-" nnoremap j gj
-" nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 " nnoremap gj j
 " nnoremap gk k
-" nnoremap <expr> j v:count ? 'j' : 'gj'
-" nnoremap <expr> k v:count ? 'k' : 'gk'
-" vnoremap j gj
-" vnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
-" vnoremap j gj
-" vnoremap k gk
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+vnoremap j gj
+vnoremap k gk
 
-
-" inoremap jk <Esc>
 
 " highlight last inserted text
 nnoremap gs `[v`]
@@ -300,11 +296,13 @@ nmap <leader>t :update<CR>
 vmap <leader>t <Esc><leader>gv
 nnoremap <leader>z :NERDTreeToggle<CR>
 
-" scroll by n lines at once
-nnoremap <C-e> ^5<C-e>5j
-nnoremap <C-y> ^5<C-y>5k
-vnoremap <C-e> 5<C-e>
-vnoremap <C-y> 5<C-y>
+" " scroll by n lines at once
+" nnoremap <C-e> ^5<C-e>5j
+" nnoremap <C-y> ^5<C-y>5k
+" vnoremap <C-e> 5<C-e>
+" vnoremap <C-y> 5<C-y>
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
 
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
