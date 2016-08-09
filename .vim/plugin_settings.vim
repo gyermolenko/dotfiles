@@ -379,7 +379,7 @@ let g:EasyMotion_keys = 'jkloimchgewa,unpqrzxvtybsdf;'
 " hi EasyMotionTarget2First ctermbg=NONE ctermfg=red cterm=bold
 " hi EasyMotionTarget2Second ctermbg=NONE ctermfg=red cterm=bold
 
-hi EasyMotionTarget2First ctermfg=green ctermbg=none cterm=bold
+" hi EasyMotionTarget2First ctermfg=green ctermbg=none cterm=bold
 " hi EasyMotionTarget2Second ctermfg=green ctermbg=none cterm=bold
 
 " magenta
@@ -421,3 +421,10 @@ map <localleader>k V<Plug>(easymotion-k)
 " trying to make it mose useful for distant places and Colemak
 " let g:EasyMotion_keys = 'tnseriaocmfuplwyx,dhvkgjzq:/b[904TNSERIAOCMFUPLWYXDHVKGJZQ'
 " let g:EasyMotion_keys = ';asdfjkl:ghrueicm,.tyvbnwqopzx/[904?ASDFJLGHQWERTYUIOPZXCVBNM<>'
+
+
+" === vim-xkbswitch ===
+" let g:XkbSwitchEnabled = 1 
+" let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.so'
+" let g:XkbSwitchIMappings = ['ru']
+" let g:XkbSwitchNLayout = 'us'
