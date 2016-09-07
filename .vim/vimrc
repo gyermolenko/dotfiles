@@ -7,6 +7,10 @@ filetype plugin indent on
 packadd! matchit
 
 " source ~/.vim/cyr_keys.vim
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
 
 " === Settings  ======================================================
 " ===================================================================
@@ -209,9 +213,9 @@ nnoremap <leader>q :qa!<CR>
 " closes tab containing buffer
 " nnoremap <leader>d :bd!<cr>
 " do not close containing tab
-nnoremap <Leader>d :Bclose!<CR>
-" Kill window
-" nnoremap <Leader>dt :q<cr>
+nnoremap <leader>d :Bclose!<CR>
+" Kill window - conflicts with current Easymotion hotkey
+" nnoremap <leader>Q :q<cr>
 
 " filetype related
 nnoremap <leader>fh :set ft=html<CR>
@@ -227,6 +231,9 @@ nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
 nnoremap <leader>6 6gt
 nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 10gt
 
 " ==== localleader ====
 " ================================================
@@ -339,6 +346,7 @@ nnoremap ! q
 
 nnoremap <leader>v /<c-r>+<cr>
 nnoremap 0 V
+vnoremap 0 V
 
 
 " ========== end of Custom mappings ==================================
