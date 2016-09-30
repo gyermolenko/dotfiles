@@ -320,7 +320,7 @@ map # <Plug>(asterisk-#)
 
 
 " === auto-pairs ===
-let g:AutoPairsOnlyWhitespace = 1
+" let g:AutoPairsOnlyWhitespace = 1
 
 
 " === Sneak ===

@@ -64,8 +64,8 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'maxbrunsfeld/vim-yankstack'
 
-" Plugin 'jiangmiao/auto-pairs'
-Plugin 'eapache/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'eapache/auto-pairs'
 
 Plugin 'pangloss/vim-javascript'
 
@@ -73,7 +73,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
 
-Plugin 'exu/pgsql.vim'
+" Plugin 'exu/pgsql.vim'
 
 Plugin 'rbgrouleff/bclose.vim'
 
