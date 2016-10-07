@@ -237,13 +237,6 @@ vmap <localleader>n <Plug>yankstack_substitute_newer_paste
 " map y <Plug>(operator-flashy)
 
 
-" === Special mappings ===
-" nnoremap ; :
-" vnoremap ; :
-" nnoremap ' :
-" vnoremap ' :
-
-
 " === Surround ===
 " call yankstack#setup()
 nmap Y ysiw
@@ -280,7 +273,7 @@ nnoremap <silent> [r :CtrlSpaceGoUp<CR>
 
 
 " === Ack =========
-nnoremap <leader>ac :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags 
+nnoremap <leader>ac :Ack --ignore-dir={env,.env,.env_django145,feeds/mysql} --ignore-file=ext:js,tags 
 nnoremap <leader>av :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags "<c-r>+"<cr>
 nnoremap <leader>Ac :Ack --ignore-file=ext:js 
 nnoremap <leader>ag :Ag --ignore-dir={env,.env,feeds/mysql} 
