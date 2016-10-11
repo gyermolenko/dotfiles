@@ -4,7 +4,6 @@ syntax on
 
 " filetype on
 filetype plugin indent on
-packadd! matchit
 
 " source ~/.vim/cyr_keys.vim
 set keymap=russian-jcukenwin
@@ -21,7 +20,18 @@ set encoding=utf-8
 set noswapfile
 " in all modes do not select row numbers via mouse
 set mouse=a
-set ttymouse=xterm2
+
+
+if !has('nvim')
+    set ttymouse=xterm2
+    packadd! matchit
+endif
+
+if has('nvim')
+    set termguicolors
+    " sudo apt-get install xclip
+endif
+
 
 set undofile
 set undodir=$HOME/.vim/undo
@@ -107,11 +117,6 @@ set showtabline=2
 " 00 padded digits considered decimal, not octal. So now C-a for 007 does 008 instead of 010
 set nrformats=
 
-" === Settings for buffers
-" map <C-q> :qa!<CR>
-" move to next/previous buffer
-" noremap <C-Right> :bn<CR>
-" noremap <C-Left> :bp<CR>
 
 " === Insert
 " Allow backspace to remove indents, newlines and old tex"
