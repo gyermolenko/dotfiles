@@ -101,7 +101,7 @@ Plugin 'tweekmonster/django-plus.vim'
 Plugin 'vim-utils/vim-vertical-move'
 
 " Plugin 'haya14busa/vim-easyoperator-line'
-" Plugin 'lyokha/vim-xkbswitch'
+Plugin 'lyokha/vim-xkbswitch'
 " ====================================================================
 
 

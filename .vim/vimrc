@@ -6,13 +6,10 @@ syntax on
 filetype plugin indent on
 
 " source ~/.vim/cyr_keys.vim
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
+" set keymap=russian-jcukenwin
+" set iminsert=0
+" set imsearch=0
 
-" === Settings  ======================================================
-" ===================================================================
 
 " ====== System ================================================
 " ==============================================================
@@ -37,6 +34,7 @@ endif
     " 2 FIX: 
     " so MYVIMRC
     " paths with .vim or symlink
+    " sneak highlights
 " endif
 
 if has('termguicolors')
@@ -565,6 +563,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " do not highlight & and ? in addresses in red
 highlight Error NONE
+highlight lCursor guifg=NONE guibg=Cyan
 highlight MatchTag cterm=bold,underline ctermfg=11 ctermbg=none
 highlight MatchParen cterm=bold ctermfg=164 ctermbg=none guifg=magenta
 

@@ -416,7 +416,8 @@ map <localleader>k V<Plug>(easymotion-k)
 
 
 " === vim-xkbswitch ===
-" let g:XkbSwitchEnabled = 1 
-" let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.so'
+let g:XkbSwitchEnabled = 1 
+let g:XkbSwitchLib = '/usr/lib/libxkbswitch.so'
 " let g:XkbSwitchIMappings = ['ru']
-" let g:XkbSwitchNLayout = 'us'
+let g:XkbSwitchILayout = 'ru'
+let g:XkbSwitchNLayout = 'us'
