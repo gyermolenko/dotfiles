@@ -34,3 +34,4 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
+ln -s ~/dotfiles/lock_screen.sh ~/lock_screen.sh
