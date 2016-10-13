@@ -16,7 +16,7 @@ highlight lCursor guifg=NONE guibg=Cyan
 
 " ====== System ================================================
 " ==============================================================
-set encoding=utf-8
+" set encoding=utf-8
 set noswapfile
 " in all modes do not select row numbers via mouse
 set mouse=a
@@ -27,9 +27,20 @@ if !has('nvim')
     packadd! matchit
 endif
 
-if has('nvim')
-    set termguicolors
+" if has('nvim')
+    " copy-to-clipboard support
     " sudo apt-get install xclip
+    " python provider for plugins such as jedi, ultisnips etc.
+    " pip2 install --upgrade neovim
+    " pip3 install --upgrade neovim
+
+    " 2 FIX: 
+    " so MYVIMRC
+    " paths with .vim or symlink
+" endif
+
+if has('termguicolors')
+    set termguicolors
 endif
 
 
@@ -210,10 +221,9 @@ nnoremap <leader>eS :e /media/data/Dropbox/vimworknotes_passwords<CR>
 nnoremap <leader>et :e ~/.tmux.conf<CR>
 nnoremap <leader>ez :e ~/.zshrc<CR>
 " Reload vimrc
-nnoremap <leader>rr :source $MYVIMRC<CR>
+" nnoremap <leader>rr :source $MYVIMRC<CR>
+nnoremap <leader>rr :source ~/.vim/vimrc<CR>
 
-" nnoremap <leader>pr :cd /media/data/Dropbox/Projects/<CR>
-" nnoremap <leader>wd :pwd<CR>
 nnoremap <leader>q :qa!<CR>
 " closes tab containing buffer
 " nnoremap <leader>d :bd!<cr>
@@ -367,17 +377,10 @@ vnoremap 0 V
 
 " ==================== ctags ==================================
 " ===================================================================
-" set tags=tags,envtags
 set tags=project.tags,env.tags
-" set tags=$VIRTUAL_ENV/tags
-" nnoremap <F7> :!ctags -R -f tags $VIRTUAL_ENV/lib/python2.7/site-packages<CR>
-" nnoremap <F7> :!ctags -R -f $VIRTUAL_ENV/tags --python-kinds=-i -a --exclude=.git $VIRTUAL_ENV/lib/python2.7/site-packages<CR>
-" nnoremap <F7> :!ctags -R --python-kinds=-i -a --exclude=.git $VIRTUAL_ENV/lib/python2.7/site-packages<CR>
-" ctags -R -f ~/nan/tags --python-kinds=-i --exclude=.git ~/nan/
 
 " generate simple tags (more flags for this command are in ~/.ctags conf file)
 nnoremap <leader>gtp :!ctags -f 'project.tags' --exclude={env,.env,.env_django145,feeds/mysql}<cr>
-" nnoremap <F7> :!ctags -R -f tags --exclude=env<cr>
 " generate env tags
 nnoremap <leader>gte :!ctags -f 'env.tags' $VIRTUAL_ENV/lib/python2.7/site-packages<cr>
 " ===============================================
@@ -561,34 +564,25 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " === Highlight ================================================
 
 " do not highlight & and ? in addresses in red
-hi Error NONE
-" highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
-" highlight MatchTag ctermfg=green ctermbg=black guifg=black guibg=lightgreen
-" highlight MatchTag cterm=bold,underline ctermfg=11 ctermbg=235 
-highlight MatchTag cterm=bold,underline ctermfg=11 ctermbg=none 
-
-highlight MatchParen cterm=bold ctermbg=none ctermfg=164 guifg=magenta
-" highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=green
-" highlight MatchParen cterm=bold,underline ctermbg=none ctermfg=39
+highlight Error NONE
+highlight MatchTag cterm=bold,underline ctermfg=11 ctermbg=none
+highlight MatchParen cterm=bold ctermfg=164 ctermbg=none guifg=magenta
 
 " blue fg as in clever-f find
 " highlight Search ctermfg=39 ctermbg=NONE cterm=bold,underline
 " bright magenta fg
 " highlight Search ctermfg=164 ctermbg=NONE cterm=bold
 " magenta fg, but with light transparent bg
-highlight Search ctermfg=164 ctermbg=235 cterm=bold
+highlight Search ctermfg=164 ctermbg=235 cterm=bold guifg=#d700d7 guibg=#262626
 " pale yellow bg
 " highlight Search ctermfg=16 ctermbg=143 cterm=bold
 
 " hi StatusLine ctermfg=164 ctermbg=39 cterm=bold
 " hi StatusLineNC ctermfg=16 ctermbg=235 cterm=bold
 
-" hi TabLine term=underline ctermfg=15 ctermbg=233
-" hi TabLineSel term=bold ctermfg=16 ctermbg=39 guifg=#000000 guibg=#0a9dff
-" hi TabLineFill term=reverse ctermfg=15 ctermbg=233 guifg=#f8f6f2 guibg=#1c1b1a
-hi TabLine term=underline ctermfg=243 ctermbg=236
-hi TabLineSel term=bold ctermfg=222 ctermbg=236
-hi TabLineFill term=reverse ctermfg=15 ctermbg=236
+highlight TabLine term=underline ctermfg=243 ctermbg=236 guifg=#767676 guibg=#303030
+highlight TabLineSel term=bold ctermfg=222 ctermbg=238 guifg=#ffd787 guibg=#444444
+highlight TabLineFill term=reverse ctermfg=15 ctermbg=236 guibg=#303030
 " ==================================================================
 
 
@@ -596,21 +590,4 @@ hi TabLineFill term=reverse ctermfg=15 ctermbg=236
 " ========== Plugin settings =========
 source ~/.vim/plugin_settings.vim
 
-
-
-" === Mappings with Alt are hard ===
-" cnoremap <Esc>b <S-Left>
-" cnoremap <Esc>f <S-Right>
-execute "set <M-b>=\eb"
-execute "set <M-f>=\ef"
-cnoremap <M-b> <S-Left>
-cnoremap <M-f> <S-Right>
-" cnoremap <Esc>f <S-Right>
-
-" execute "set <M-m>=\em"
-" nnoremap <M-j> :echo "alt"
-" delete one character to the right
-" nnoremap <M-m> lxh
-" win
-" nnoremap q :echo "win"
 

@@ -64,7 +64,8 @@ let g:jedi#usages_command = "<F12>"
 " let g:jedi#rename_command = "<leader>r"
 let g:jedi#rename_command = ""
 let g:jedi#show_call_signatures = 2
-highlight Pmenu ctermbg=19 ctermfg=11
+" jedi or ycm popup
+highlight Pmenu ctermfg=11 ctermbg=19 guibg=#0000af
 
 
 " === Airline
@@ -184,7 +185,6 @@ nmap <leader>c gcc
 
 " === CtrlSpace ===
 let g:CtrlSpaceDefaultMappingKey = "<C-Space>"
-" let g:CtrlSpaceDefaultMappingKey = "q"
 let g:CtrlSpaceSaveWorkspaceOnExit = 0
 let g:CtrlSpaceLoadLastWorkspaceOnStart = 0
 let g:CtrlSpaceUseTabline = 1
@@ -193,13 +193,12 @@ nnoremap <leader>wo :CtrlSpaceLoadWorkspace workspace_1<CR>
 nnoremap <leader>wp :CtrlSpaceLoadWorkspace add_provider<CR>
 " let g:CtrlSpaceKeys = { "Buffer": { "a": <cr> } }vO
 let g:CtrlSpaceIgnoredFiles = '\v(tmp|temp|env|.env)[\/]'
-" hi CtrlSpaceSearch guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
-" hi link CtrlSpaceStatus StatusLine
-" hi StatusLine guifg=#cb4b16 guibg=NONE gui=bold ctermfg=3 ctermbg=NONE term=bold cterm=bold
-hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
-hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
-hi CtrlSpaceSearch   ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
-hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE    gui=NONE
+
+highligh CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
+highligh CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
+highligh CtrlSpaceSearch   ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
+highligh CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE    gui=NONE
+
 nnoremap <silent> <C-f> :CtrlSpaceGoDown<CR>
 nnoremap <silent> <C-b> :CtrlSpaceGoUp<CR>
 
@@ -322,7 +321,7 @@ let g:sneak#absolute_dir = 0
 " Case sensitivity is determined by 'ignorecase' and 'smartcase'
 let g:sneak#use_ic_scs = 1
 " hi link SneakPluginTarget ErrorMsg
-hi link SneakPluginScope  Comment
+highligh link SneakPluginScope  Comment
 " because of easymotion
 let g:sneak#textobject_z = 0
 " highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen

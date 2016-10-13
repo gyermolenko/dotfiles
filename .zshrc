@@ -139,12 +139,13 @@ alias grex="grep -r --exclude-dir={env,.git} --exclude={\*.pyc,\*.tags}"
 alias ,ez="vim ~/.zshrc"
 alias ,rz="source ~/.zshrc"
 alias ,et="vim ~/.tmux.conf"
-alias tmux="tmux -2"
+# alias tmux="tmux -2"
 alias tmuxn="tmux-next -2"
 alias tmuxsw="./tmux_setup.sh"
 alias tmuxsh="./tmux_setup_home.sh"
 alias ag="ag --color-match 1\;31"
 # export TERM=xterm-256color
+export TERM=screen-256color
 # alias sqlite="rlwrap -a -N -i sqlite3"
 alias vi="vim"
 
