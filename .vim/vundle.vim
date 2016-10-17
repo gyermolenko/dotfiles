@@ -4,7 +4,10 @@ set nocompatible
 filetype off
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
+let &rtp = &rtp . ',' . g:editor_root . '/bundle/Vundle.vim/'
+call vundle#rc(g:editor_root . '/bundle')
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')

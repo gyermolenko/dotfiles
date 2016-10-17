@@ -1,3 +1,9 @@
+if has('nvim')
+    let g:editor_root=expand("~/.config/nvim")
+else
+    let g:editor_root=expand("~/.vim")
+endif
+
 source ~/.vim/vundle.vim
 
 syntax on
@@ -19,7 +25,8 @@ set noswapfile
 set mouse=a
 
 
-if !has('nvim')
+if has('nvim')
+else
     set ttymouse=xterm2
     packadd! matchit
 endif
