@@ -4,17 +4,14 @@ else
     let g:editor_root=expand("~/.vim")
 endif
 
-source ~/.vim/vundle.vim
+" source ~/.vim/vundle.vim
+" switched from Vundle to vim-plug
+source ~/.vim/plugins.vim
 
 syntax on
 
 " filetype on
 filetype plugin indent on
-
-" source ~/.vim/cyr_keys.vim
-" set keymap=russian-jcukenwin
-" set iminsert=0
-" set imsearch=0
 
 
 " ====== System ================================================
@@ -26,12 +23,6 @@ set mouse=a
 
 
 if has('nvim')
-else
-    set ttymouse=xterm2
-    packadd! matchit
-endif
-
-" if has('nvim')
     " copy-to-clipboard support
     " sudo apt-get install xclip
     " python provider for plugins such as jedi, ultisnips etc.
@@ -40,9 +31,13 @@ endif
 
     " 2 FIX: 
     " so MYVIMRC
-    " paths with .vim or symlink
+    " paths with .vim or symlink (editor_root)
     " sneak highlights
-" endif
+else
+    set ttymouse=xterm2
+    packadd! matchit
+endif
+
 
 if has('termguicolors')
     set termguicolors
@@ -68,8 +63,6 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
-" set autochdir
-" autocmd BufEnter, BufNewFile * silent! lcd %:p:h
 
 "do not select first word char on vw
 " default - inclusive
@@ -217,7 +210,8 @@ let maplocalleader = " "
 " Edit config files
 nnoremap <leader><Tab> :tabe<cr>
 nnoremap <leader>er :e $MYVIMRC<CR>
-nnoremap <leader>ev :e ~/.vim/vundle.vim<CR>
+" nnoremap <leader>ev :e ~/.vim/vundle.vim<CR>
+nnoremap <leader>ev :e ~/.vim/plugins.vim<CR>
 nnoremap <leader>ep :e ~/.vim/plugin_settings.vim<CR>
 nnoremap <leader>en :e /media/data/Dropbox/vimnotes<CR>
 nnoremap <leader>ew :e /media/data/Dropbox/vimworknotes<CR>

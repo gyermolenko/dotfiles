@@ -419,5 +419,5 @@ map <localleader>k V<Plug>(easymotion-k)
 let g:XkbSwitchEnabled = 1 
 let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.so'
 " let g:XkbSwitchIMappings = ['ru']
-let g:XkbSwitchILayout = 'ru'
+" let g:XkbSwitchILayout = 'ru'
 let g:XkbSwitchNLayout = 'us'
