@@ -14,8 +14,6 @@ syntax on
 filetype plugin indent on
 
 
-" ====== System ================================================
-" ==============================================================
 " set encoding=utf-8
 set noswapfile
 " in all modes do not select row numbers via mouse
@@ -29,7 +27,7 @@ if has('nvim')
     " pip2 install --upgrade neovim
     " pip3 install --upgrade neovim
 
-    " 2 FIX: 
+    " 2 FIX:
     " so MYVIMRC
     " paths with .vim or symlink (editor_root)
     " sneak highlights
@@ -51,7 +49,6 @@ set undolevels=1000
 " to be able switch buffer wo saving explicitly
 set hidden
 
-
 " cursor is kept in the same column on buffer switch
 set nostartofline
 
@@ -63,19 +60,17 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
-
-"do not select first word char on vw
-" default - inclusive
+" do not select first word char on vw [default - inclusive]
 set selection=inclusive
 
 " position of splits
 set splitright
 set splitbelow
 
-" to alias unnamed register to the + register, which is the X Window clipboard
+" alias unnamed register to the + register, which is the X Window clipboard
 set clipboard=unnamedplus
 
-" === Indentation ========
+" === Indentation ====================
 set tabstop=4
 " tab like 4 spaces
 set softtabstop=4
@@ -91,7 +86,7 @@ set autoindent
 set textwidth=0
 " ===================
 
-" === Search =============
+" === Search =========================
 " Highlight search results
 set nohlsearch
 " make so it do not hl when vimrc reloads, even if hlsearch was on
@@ -110,7 +105,6 @@ set ignorecase
 set smartcase
 " While typing a search command, show where the pattern
 set incsearch
-
 " ====================================
 
 " not less then x rows fixed before/after line with cursor during scroll
@@ -126,20 +120,16 @@ set showtabline=2
 " 00 padded digits considered decimal, not octal. So now C-a for 007 does 008 instead of 010
 set nrformats=
 
-
-" === Insert
 " Allow backspace to remove indents, newlines and old tex"
 set backspace=indent,eol,start
 " Start in normal (non-paste) mode
 set nopaste
 
 
-" === Other
-
 " === Matching characters
 " the cursor will briefly jump to the matching brace when you insert one
-"set showmatch
-"set matchtime=3
+" set showmatch
+" set matchtime=3
 " Make < and > match as well
 " set matchpairs+=<:>
 set matchpairs=(:),[:],{:}
@@ -147,24 +137,12 @@ set matchpairs=(:),[:],{:}
 
 " === Display ========================
 " use 256 colors in terminal. Put before colorscheme settings
-"Also, if the terminfo file is correct, there's no need to set 't_Co' in Vim. It will ask the terminal for that value.
+" Also, if the terminfo file is correct, there's no need to set 't_Co' in Vim. It will ask the terminal for that value.
 set t_Co=256
 
-" colorscheme monokai
-" from bundle flazz/vim-colorschemes, edited search and pmenu
-" colorscheme monokai-chris_
 colorscheme badwolf
-" colorscheme badwolf_
 " highlight Normal ctermbg=None
 
-" == terminal colors stuff. needs investigation ===
-" http://blog.konradwasowicz.com/there-are-many-Vims-like-it.html
-" set t_Co=256
-" set term=xterm-256color
-" Disable Background Color Erase (BCE) so that color scheme work
-" properly when Vim is used inside tmux and GNU screen.
-" set t_ut=
-" ====================
 
 " Always show a statusline
 set laststatus=2
@@ -249,7 +227,7 @@ nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <leader>0 10gt
 
-" ==== localleader ====
+" ==== Localleader ===============================
 " ================================================
 
 " clear normal/visual mode highlighting
@@ -258,8 +236,6 @@ nnoremap <localleader><space> :noh<CR>
 " Show trailing whitespace:
 nnoremap <localleader>h<space> /\s\+$<cr>
 
-" nnoremap <space>; :<up>
-" nnoremap <space>/ /<up>
 nnoremap <localleader>; :<up>
 nnoremap <localleader>/ /<up>
 " ================================================
@@ -275,10 +251,10 @@ vnoremap L g_
 " nnoremap ( 3{
 " vnoremap ) 3}
 " vnoremap ( 3{
-nnoremap ) 10j
-nnoremap ( 10k
-vnoremap ) 10j
-vnoremap ( 10k
+nnoremap ) 7j
+nnoremap ( 7k
+vnoremap ) 7j
+vnoremap ( 7k
 
 nnoremap ' `
 vnoremap ' `
@@ -287,15 +263,18 @@ vnoremap ' `
 " nnoremap <expr> { len(getline(line('.')-1)) > 0 ? '{+' : '{-'
 " nnoremap <expr> } len(getline(line('.')+1)) > 0 ? '}-' : '}+'
 
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 " nnoremap gj j
 " nnoremap gk k
-nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'gj'
-nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'gk'
-" nnoremap <expr> k v:count ? 'k' : 'gk'
-vnoremap j gj
-vnoremap k gk
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count . 'j' : 'gj')
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count . 'k' : 'gk')
+" nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
+" nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
+" vnoremap j gj
+" vnoremap k gk
+vnoremap <expr> j (v:count > 1 ? "m'" . v:count . 'j' : 'gj')
+vnoremap <expr> k (v:count > 1 ? "m'" . v:count . 'k' : 'gk')
 
 
 " highlight last inserted text
@@ -412,7 +391,7 @@ endfor
 " === Scripts ======================================
 " ==================================================
 
-" === GUI =============================================== 
+" === GUI ===============================================
 
 if has("gui_running")
     " GUI is running or is about to start.
@@ -541,7 +520,6 @@ autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 " autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType sql setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-" autocmd BufRead,BufNewFile *.foo set filetype=foo
 " remove annoying <:> pair highligh in html
 autocmd FileType xml,html,htmljinja,htmldjango set matchpairs=(:),[:],{:}
 

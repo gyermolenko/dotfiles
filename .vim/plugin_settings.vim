@@ -237,6 +237,11 @@ vmap <localleader>n <Plug>yankstack_substitute_newer_paste
 
 
 " === Surround ===
+let g:surround_no_mappings = 1
+nmap ds  <Plug>Dsurround
+nmap cs  <Plug>Csurround
+nmap ys  <Plug>Ysurround
+nmap yss <Plug>Yssurround
 " call yankstack#setup()
 nmap Y ysiw
 xmap Y <Plug>VSurround
@@ -323,7 +328,7 @@ let g:sneak#use_ic_scs = 1
 " hi link SneakPluginTarget ErrorMsg
 highligh link SneakPluginScope  Comment
 " because of easymotion
-let g:sneak#textobject_z = 0
+let g:sneak#textobject_z = 1
 " highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
 " none - MAGENTA
 " highlight SneakPluginTarget ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -382,19 +387,18 @@ let g:EasyMotion_keys = 'jkloimchgewa,unpqrzxvtybsdf;'
 " hi EasyMotionTarget2Second ctermfg=39 ctermbg=NONE cterm=bold
 
 
-nmap q <Plug>(easymotion-f)
-xmap q <Plug>(easymotion-f)
-omap q <Plug>(easymotion-f)
-nmap Q <Plug>(easymotion-F)
-xmap Q <Plug>(easymotion-F)
-omap Q <Plug>(easymotion-F)
-omap z <Plug>(easymotion-t)
-omap Z <Plug>(easymotion-T)
+" nmap q <Plug>(easymotion-f)
+" xmap q <Plug>(easymotion-f)
+" omap q <Plug>(easymotion-f)
+" nmap Q <Plug>(easymotion-F)
+" xmap Q <Plug>(easymotion-F)
+" omap Q <Plug>(easymotion-F)
+" omap z <Plug>(easymotion-t)
+" omap Z <Plug>(easymotion-T)
 
-map <localleader>j V<Plug>(easymotion-j)
-map <localleader>k V<Plug>(easymotion-k)
-" map <localleader>l v<Plug>(easymotion-fl)
-" map <localleader>h v<Plug>(easymotion-Fl)
+" map <localleader>j V<Plug>(easymotion-j)
+" map <localleader>k V<Plug>(easymotion-k)
+
 
 " nmap f <Plug>(easymotion-fl)
 " xmap f <Plug>(easymotion-fl)
