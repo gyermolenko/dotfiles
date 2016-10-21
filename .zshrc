@@ -144,6 +144,7 @@ alias tmuxn="tmux-next"
 alias tmuxsw="./tmux_setup.sh"
 alias tmuxsh="./tmux_setup_home.sh"
 alias ag="ag --color-match 1\;31"
+# export TERM=xterm
 # export TERM=xterm-256color
 export TERM=screen-256color
 # alias sqlite="rlwrap -a -N -i sqlite3"

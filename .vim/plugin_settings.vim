@@ -271,7 +271,7 @@ nnoremap com :SignatureToggle<cr>
 nnoremap cog :GitGutterToggle<cr>
 
 " === CtrlSpace [2] ===
-" because of unimpaired ]b
+" because of unimpaired ]b . But also i have <c-f>/<c-b>
 nnoremap <silent> ]r :CtrlSpaceGoDown<CR>
 nnoremap <silent> [r :CtrlSpaceGoUp<CR>
 

@@ -76,8 +76,10 @@ Plug 'tommcdo/vim-exchange'
 Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'teranex/jk-jumps.vim'
 
-" library plugin to provide an easy way to define your own operator
+
+" (dependency) library plugin to provide an easy way to define your own operator
 Plug 'kana/vim-operator-user'
+" depends on kana/vim-operator-user
 " Plug 'haya14busa/vim-operator-flashy'
 
 " visual marks in gutter
