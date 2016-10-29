@@ -302,8 +302,8 @@ nnoremap <leader>z :NERDTreeToggle<CR>
 " nnoremap <C-y> ^5<C-y>5k
 " vnoremap <C-e> 5<C-e>
 " vnoremap <C-y> 5<C-y>
-nnoremap <C-e> 5<C-e>
-nnoremap <C-y> 5<C-y>
+nnoremap <C-e> 4<C-e>
+nnoremap <C-y> 4<C-y>
 
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -316,16 +316,16 @@ xnoremap <C-L> <C-W><C-L>
 xnoremap <C-H> <C-W><C-H>
 
 inoremap <c-a> <Home>
+cnoremap <c-a> <Home>
 inoremap <c-e> <End>
-cnoremap <c-a> <home>
-cnoremap <c-e> <end>
+cnoremap <c-e> <End>
 inoremap <C-d> <Del>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-inoremap <C-h> <Backspace>
 cnoremap <C-d> <Del>
+inoremap <C-b> <Left>
 cnoremap <C-b> <Left>
+inoremap <C-f> <Right>
 cnoremap <C-f> <Right>
+inoremap <C-h> <Backspace>
 cnoremap <C-h> <Backspace>
 
 " by default those keys scroll history up-down with no respect to prefix
@@ -334,10 +334,6 @@ cnoremap <C-p> <Up>
 
 " switch to alternate buffer
 nnoremap <c-p> <C-^>
-
-" search for visually selected text
-" and now i have vim-asterisk
-" vnoremap // y/<C-R>"<CR>
 
 " since i use q for other things
 nnoremap ! q
@@ -358,7 +354,7 @@ vnoremap 0 V
 set tags=project.tags,env.tags
 
 " generate simple tags (more flags for this command are in ~/.ctags conf file)
-nnoremap <leader>gtp :!ctags -f 'project.tags' --exclude={env,.env,.env_django145,feeds/mysql}<cr>
+nnoremap <leader>gtp :!ctags -f 'project.tags' --exclude={env,.env,feeds/mysql}<cr>
 " generate env tags
 nnoremap <leader>gte :!ctags -f 'env.tags' $VIRTUAL_ENV/lib/python2.7/site-packages<cr>
 " ===============================================
@@ -384,7 +380,6 @@ for char in [ '_', '/', '<bslash>', '`' ]
 endfor
 
 "================================================
-
 
 
 
@@ -445,11 +440,6 @@ endif
 " augroup END
 " ==================================================
 
-" hi CursorLine ctermbg=235 cterm=none
-
-" hi CursorLine term=bold cterm=bold guibg=Grey40
-" hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white
-
 " ===========================================
 " Make sure Vim returns to the same line when you reopen a file.
 " ===========================================
@@ -461,24 +451,6 @@ augroup line_return
         \ endif
 augroup END
 " ===========================================
-
-" === View and paste from a register =======
-" Display the numbered registers, press a key and paste it to the buffer
-" candidate 4del
-function! Reg()
-    reg
-    echo "Register: "
-    let char = nr2char(getchar())
-    if char != "\<Esc>"
-        execute "normal! \"".char."p"
-    endif
-    redraw
-endfunction
-
-command! -nargs=0 Reg call Reg()
-
-" ===========================================
-
 
 " === List all leader mappings ========================================
 function! ListLeaders()
@@ -499,29 +471,24 @@ endfunction
 " === end of Scripts ========================================
 
 
-
-
 " === Filetype-related ========================
 
 " removes underline in html for 'a' tags. and something more
 let html_no_rendering=1
 
-" au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
-autocmd BufRead,BufNewFile *.sql set filetype=pgsql
-autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
-autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
-
 autocmd FileType python,javascript setlocal colorcolumn=80
 " do not show docstring window during completion
 autocmd FileType python setlocal completeopt-=preview
-
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-" some day..
-" autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
 autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType sql setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
+autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
 " remove annoying <:> pair highligh in html
 autocmd FileType xml,html,htmljinja,htmldjango set matchpairs=(:),[:],{:}
+
+autocmd BufRead,BufNewFile *.sql set filetype=pgsql
+autocmd FileType sql setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 autocmd BufRead,BufNewFile *.go setlocal nolist
 
@@ -548,8 +515,6 @@ highlight MatchParen cterm=bold ctermfg=164 ctermbg=none guifg=magenta
 
 " blue fg as in clever-f find
 " highlight Search ctermfg=39 ctermbg=NONE cterm=bold,underline
-" bright magenta fg
-" highlight Search ctermfg=164 ctermbg=NONE cterm=bold
 " magenta fg, but with light transparent bg
 highlight Search ctermfg=164 ctermbg=235 cterm=bold guifg=#d700d7 guibg=#262626
 " pale yellow bg

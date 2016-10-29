@@ -96,6 +96,30 @@ augroup END
 " autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
+
+" search for visually selected text
+" and now i have vim-asterisk
+" vnoremap // y/<C-R>"<CR>
+
+
+" === View and paste from a register =======
+" Display the numbered registers, press a key and paste it to the buffer
+" candidate 4del
+function! Reg()
+    reg
+    echo "Register: "
+    let char = nr2char(getchar())
+    if char != "\<Esc>"
+        execute "normal! \"".char."p"
+    endif
+    redraw
+endfunction
+
+command! -nargs=0 Reg call Reg()
+
+" ===========================================
+
+
 " ------------------------------------------------------
 " ------------------------------------------------------
 
