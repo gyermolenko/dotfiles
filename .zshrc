@@ -122,11 +122,12 @@ alias gco="git checkout"
 alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gsh="git show"
 
-alias sagi="sudo apt-get install"
-alias supdate="sudo apt-get update && sudo apt-get upgrade"
+alias suagi="sudo apt-get install"
+alias supgrade="sudo apt-get update && sudo apt-get upgrade"
 
-alias seba="source env/bin/activate"
-alias s.ba="source .env/bin/activate"
+alias sba="source env/bin/activate"
+alias sba.="source .env/bin/activate"
+alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
 alias dd="deactivate"
 
 alias fih="find . -maxdepth 1 -iname"
@@ -134,20 +135,19 @@ alias grex="grep -r --exclude-dir={env,.git} --exclude={\*.pyc,\*.tags}"
 # alias tr="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 2"
 # alias tre="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 3"
 
-alias ,ez="vim ~/.zshrc"
+alias ,ez="vi ~/.zshrc"
 alias ,rz="source ~/.zshrc"
-alias ,et="vim ~/.tmux.conf"
+alias ,et="vi ~/.tmux.conf"
 # alias tmux="tmux -2"
 alias tmuxn="tmux-next"
 alias tmuxsw="./tmux_setup.sh"
 alias tmuxsh="./tmux_setup_home.sh"
 alias ag="ag --color-match 1\;31"
-# export TERM=xterm
+
 # export TERM=xterm-256color
 export TERM=screen-256color
-# alias sqlite="rlwrap -a -N -i sqlite3"
-alias vi="nvim"
 
+alias vi="nvim"
 
 # Colored man pages: http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
 # Less Colors for Man Pages
