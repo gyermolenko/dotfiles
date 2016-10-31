@@ -105,14 +105,12 @@ zle -N fancy-ctrl-z
 bindkey '' fancy-ctrl-z
 # # ====================================
 
-alias l="ls -laF -h --group-directories-first"
 alias s="ls -laF -h --group-directories-first"
 alias lc="ls -AF -h --group-directories-first"
-# alias wd="pwd"
-# alias c.="cd .."
-# alias ch="cd ~"
+
 alias cpr="cd /media/data/Dropbox/Projects"
 alias cgc="cd ~/gocode/src/github.com/gy"
+
 alias i2="ipython"
 alias i="ipython3"
 alias i35="python3.5 -m IPython"
