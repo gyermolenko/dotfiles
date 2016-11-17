@@ -96,6 +96,7 @@ Plug 'vim-utils/vim-vertical-move'
 Plug 'lyokha/vim-xkbswitch'
 
 Plug 'ap/vim-css-color', { 'for': 'css' }
+Plug 'christoomey/vim-tmux-navigator'
 " ====================================================================
 
 

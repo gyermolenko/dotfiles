@@ -105,12 +105,10 @@ zle -N fancy-ctrl-z
 bindkey '' fancy-ctrl-z
 # # ====================================
 
-alias l="ls -laF -h --group-directories-first"
+# alias l="ls -laF -h --group-directories-first"
 alias s="ls -laF -h --group-directories-first"
-alias lc="ls -AF -h --group-directories-first"
-# alias wd="pwd"
-# alias c.="cd .."
-# alias ch="cd ~"
+alias c="clear"
+# alias lc="ls -AF -h --group-directories-first"
 alias cpr="cd /media/data/Dropbox/Projects"
 alias cgc="cd ~/gocode/src/github.com/gy"
 alias i2="ipython"
@@ -124,12 +122,13 @@ alias gco="git checkout"
 alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gsh="git show"
 
-alias suagi="sudo apt-get install"
+alias sagi="sudo apt-get install"
 alias supgrade="sudo apt-get update && sudo apt-get upgrade"
 
 alias sba="source env/bin/activate"
 alias sba.="source .env/bin/activate"
 alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
+alias sbat="source /media/data/Projects/twisted_env/env/bin/activate"
 alias dd="deactivate"
 
 alias fih="find . -maxdepth 1 -iname"
@@ -141,13 +140,13 @@ alias ,ez="vi ~/.zshrc"
 alias ,rz="source ~/.zshrc"
 alias ,et="vi ~/.tmux.conf"
 # alias tmux="tmux -2"
-alias tmuxn="tmux-next"
-alias tmuxsw="./tmux_setup.sh"
-alias tmuxsh="./tmux_setup_home.sh"
+# alias tmuxn="tmux-next"
+# alias tmuxsw="./tmux_setup.sh"
+# alias tmuxsh="./tmux_setup_home.sh"
 alias ag="ag --color-match 1\;31"
 
-# export TERM=xterm-256color
-export TERM=screen-256color
+export TERM=xterm-256color
+# export TERM=screen-256color
 
 alias vi="nvim"
 
