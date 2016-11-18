@@ -425,3 +425,12 @@ let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.so'
 " let g:XkbSwitchIMappings = ['ru']
 " let g:XkbSwitchILayout = 'ru'
 let g:XkbSwitchNLayout = 'us'
+
+" === vim-tmux-navigator ===
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>

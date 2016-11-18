@@ -172,6 +172,8 @@ bindkey -r '\e3'
 bindkey -r '\e4'
 bindkey -r '\e5'
 
+# bindkey "" 'clear-screen'
+
 # stop terminal from freezing on <C-S>
 stty stop undef
 
