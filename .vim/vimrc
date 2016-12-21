@@ -22,15 +22,19 @@ set mouse=a
 
 if has('nvim')
     " copy-to-clipboard support
-    " sudo apt-get install xclip
+    "   sudo apt-get install xclip
     " python provider for plugins such as jedi, ultisnips etc.
-    " pip2 install --upgrade neovim
-    " pip3 install --upgrade neovim
+    "   pip2 install --upgrade neovim
+    "   pip3 install --upgrade neovim
+    " The --user flag installs neovim in a directory within your home directory.
+    " ?? pip2 install --user neovim
+    " ?? pip3 install --user neovim
 
     " 2 FIX:
-    " so MYVIMRC
-    " paths with .vim or symlink (editor_root)
     " sneak highlights
+    " let g:python3_host_prog = '$VIRTUAL_ENV/bin/python'
+    let g:python_host_prog  = '/usr/bin/python'
+    let g:python3_host_prog = '/urs/bin/python3'
 else
     set ttymouse=xterm2
     packadd! matchit
@@ -138,10 +142,11 @@ set matchpairs=(:),[:],{:}
 " === Display ========================
 " use 256 colors in terminal. Put before colorscheme settings
 " Also, if the terminfo file is correct, there's no need to set 't_Co' in Vim. It will ask the terminal for that value.
-set t_Co=256
+" set t_Co=256
 
-colorscheme badwolf
+autocmd ColorScheme * hi! link Sneak Normal
 " highlight Normal ctermbg=None
+colorscheme badwolf
 
 
 " Always show a statusline

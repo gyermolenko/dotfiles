@@ -1,3 +1,4 @@
+" https://github.com/junegunn/vim-plug
 " Installation
 " curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 "     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -13,9 +14,9 @@ Plug 'klen/python-mode'
 """" Autocompletion
 Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe'
+" Group dependencies, vim-snippets depends on ultisnips
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 "" status-tabline
 Plug 'bling/vim-airline'
@@ -28,7 +29,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/ReplaceWithRegister'
 
 """" Files navigation
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Plug 'kien/ctrlp.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'szw/vim-ctrlspace'
@@ -82,11 +83,12 @@ Plug 'kana/vim-operator-user'
 " depends on kana/vim-operator-user
 " Plug 'haya14busa/vim-operator-flashy'
 
-" visual marks in gutter
+" gutter marks
 Plug 'kshenoy/vim-signature'
+" gutter git
+Plug 'airblade/vim-gitgutter'
 " open manuals from terminal in vim
 Plug 'jez/vim-superman'
-Plug 'airblade/vim-gitgutter'
 Plug 'haya14busa/vim-asterisk'
 Plug 'mhinz/vim-hugefile'
 Plug 'kana/vim-textobj-line'

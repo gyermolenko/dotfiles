@@ -117,7 +117,9 @@ let g:ctrlp_custom_ignore = {
 
 " === NerdTree ===
 map <F1> :NERDTreeToggle<CR>
-let NERDTreeChDirMode = 2
+let g:NERDTreeMapHelp = '<F2>'
+let g:NERDTreeMapMenu = 'M'
+let NERDTreeChDirMode = 0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let NERDTreeShowHidden = 1
 let NERDTreeSortHiddenFirst = 1
@@ -125,11 +127,11 @@ let NERDTreeMinimalUI = 0
 let NERDTreeShowLineNumbers = 1
 let NERDTreeWinSize = 46
 " i want to use backward search in NTree
-let g:NERDTreeMapHelp = '<F2>'
 " i want to use Sneak in NTree
 let g:NERDTreeMapOpenVSplit = '\s'
 " and also easymotion
 let g:NERDTreeMapQuit = '\q'
+let g:NERDTreeQuitOnOpen = 1
 
 " === SuperTab ===
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
@@ -277,11 +279,11 @@ nnoremap <silent> [r :CtrlSpaceGoUp<CR>
 
 
 " === Ack =========
-nnoremap <leader>ac :Ack --ignore-dir={env,.env,.env_django145,feeds/mysql} --ignore-file=ext:js,tags 
-nnoremap <leader>av :Ack --ignore-dir={env,.env,feeds/mysql} --ignore-file=ext:js,tags "<c-r>+"<cr>
-nnoremap <leader>Ac :Ack --ignore-file=ext:js 
-nnoremap <leader>ag :Ag --ignore-dir={env,.env,feeds/mysql} 
-nnoremap <leader>Ag :Ag 
+nnoremap <leader>a :Ack 
+nnoremap <localleader>ac :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags 
+nnoremap <localleader>av :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags "<c-r>+"<cr>
+" nnoremap <leader>ag :Ag --ignore-dir={env,.env,feeds/mysql} 
+" nnoremap <leader>Ag :Ag 
 
 
 
@@ -325,7 +327,6 @@ map # <Plug>(asterisk-#)
 let g:sneak#absolute_dir = 0
 " Case sensitivity is determined by 'ignorecase' and 'smartcase'
 let g:sneak#use_ic_scs = 1
-" hi link SneakPluginTarget ErrorMsg
 highligh link SneakPluginScope  Comment
 " because of easymotion
 let g:sneak#textobject_z = 1
@@ -333,9 +334,13 @@ let g:sneak#textobject_z = 1
 " none - MAGENTA
 " highlight SneakPluginTarget ctermfg=NONE ctermbg=NONE cterm=NONE
 " white
-highlight SneakPluginTarget ctermfg=15 ctermbg=NONE cterm=NONE
+" highlight SneakPluginTarget ctermfg=15 ctermbg=NONE cterm=NONE guifg=#000000
+
+" best so far
+" highlight SneakTarget ctermfg=15 ctermbg=NONE cterm=NONE
+
 " bright blue and underlined
-" highlight SneakPluginTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guifg=black guibg=lightgreen
+" highlight SneakTarget ctermfg=39 ctermbg=NONE cterm=bold,underline guibg=NONE guifg=lightgreen
 
 " better than vanilla f/t: <c-o> returns to starting point; smartcase search; highligh next matches in line
 nmap f <Plug>Sneak_f

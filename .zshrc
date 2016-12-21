@@ -130,6 +130,10 @@ alias sba="source env/bin/activate"
 alias sba.="source .env/bin/activate"
 alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
 alias sbat="source /media/data/Projects/twisted_env/env/bin/activate"
+alias sbaa="source /media/data/Projects/async_env/env/bin/activate"
+alias sbah="source /media/data/Projects/aiohttp_only_env/env/bin/activate"
+alias sbaf="source /media/data/Projects/flask_env/env/bin/activate"
+alias sbac="source /media/data/Projects/cruft_env/env/bin/activate"
 alias dd="deactivate"
 
 alias fih="find . -maxdepth 1 -iname"
@@ -146,8 +150,9 @@ alias ,et="vi ~/.tmux.conf"
 # alias tmuxsh="./tmux_setup_home.sh"
 alias ag="ag --color-match 1\;31"
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 # export TERM=screen-256color
+# export TERM=screen-256color-bce
 
 alias vi="nvim"
 
@@ -188,3 +193,7 @@ vman() {
 
 
 # source ~/.zsh_vi_mode.conf
+
+# if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+#   source "${VIRTUAL_ENV}/bin/activate"
+# fi
