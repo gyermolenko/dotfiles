@@ -126,8 +126,7 @@ alias gsh="git show"
 alias sagi="sudo apt-get install"
 alias supgrade="sudo apt-get update && sudo apt-get upgrade"
 
-alias sba="source env/bin/activate"
-alias sba.="source .env/bin/activate"
+alias sba.="source env/bin/activate"
 alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
 alias sbat="source /media/data/Projects/twisted_env/env/bin/activate"
 alias sbaa="source /media/data/Projects/async_env/env/bin/activate"
@@ -151,8 +150,7 @@ alias ,et="vi ~/.tmux.conf"
 alias ag="ag --color-match 1\;31"
 
 # export TERM=xterm-256color
-# export TERM=screen-256color
-# export TERM=screen-256color-bce
+export TERM=screen-256color
 
 alias vi="nvim"
 
@@ -190,7 +188,8 @@ vman() {
     echo "No manual entry for $*"
   fi
 }
-
+# view man pages in nvim instead of less
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # source ~/.zsh_vi_mode.conf
 

@@ -21,6 +21,11 @@ set mouse=a
 
 
 if has('nvim')
+
+    if has('termguicolors')
+        set termguicolors
+    endif
+
     " copy-to-clipboard support
     "   sudo apt-get install xclip
     " python provider for plugins such as jedi, ultisnips etc.
@@ -40,10 +45,6 @@ else
     packadd! matchit
 endif
 
-
-if has('termguicolors')
-    set termguicolors
-endif
 
 
 set undofile

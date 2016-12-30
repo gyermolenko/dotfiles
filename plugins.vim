@@ -40,7 +40,7 @@ Plug 'mileszs/ack.vim'
 " Plug 'easymotion/vim-easymotion'
 " TODO: FIX conflict with vim-asterisk
 " Plug 'henrik/vim-indexed-search'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
