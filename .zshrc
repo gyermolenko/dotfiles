@@ -128,10 +128,9 @@ alias supgrade="sudo apt-get update && sudo apt-get upgrade"
 
 alias sba.="source env/bin/activate"
 alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
-alias sbat="source /media/data/Projects/twisted_env/env/bin/activate"
 alias sbaa="source /media/data/Projects/async_env/env/bin/activate"
-alias sbah="source /media/data/Projects/aiohttp_only_env/env/bin/activate"
 alias sbaf="source /media/data/Projects/flask_env/env/bin/activate"
+alias sbad="source /media/data/Projects/django_env/env/bin/activate"
 alias sbac="source /media/data/Projects/cruft_env/env/bin/activate"
 alias dd="deactivate"
 

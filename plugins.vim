@@ -40,6 +40,7 @@ Plug 'mileszs/ack.vim'
 " Plug 'easymotion/vim-easymotion'
 " TODO: FIX conflict with vim-asterisk
 " Plug 'henrik/vim-indexed-search'
+" some issues in tracker
 " Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-commentary'
@@ -88,7 +89,7 @@ Plug 'kshenoy/vim-signature'
 " gutter git
 Plug 'airblade/vim-gitgutter'
 " open manuals from terminal in vim
-Plug 'jez/vim-superman'
+" Plug 'jez/vim-superman'
 Plug 'haya14busa/vim-asterisk'
 Plug 'mhinz/vim-hugefile'
 Plug 'kana/vim-textobj-line'
