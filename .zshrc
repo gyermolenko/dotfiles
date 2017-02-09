@@ -148,8 +148,10 @@ alias ,et="vi ~/.tmux.conf"
 # alias tmuxsh="./tmux_setup_home.sh"
 alias ag="ag --color-match 1\;31"
 
-# export TERM=xterm-256color
-export TERM=screen-256color
+# known issues: colors for pure vim are bad in tmux (black right side of each row)
+export TERM=xterm-256color
+# known issues: cursor shape in tmux remains like a block
+# export TERM=screen-256color
 
 alias vi="nvim"
 
