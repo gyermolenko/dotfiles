@@ -1,5 +1,8 @@
-## to list all symlinks in current dir: 
-# find . -maxdepth 1 -type l -ls
+# folders
+# dotfiles
+# .vim
+# .config / nvim
+# .oh-my-zsh/custom/themes
 
 
 ## vim
@@ -9,16 +12,23 @@ ln -s ~/dotfiles/.vim/obsolete_settings.vim ~/.vim/obsolete_settings.vim
 ln -s ~/dotfiles/.vim/vimrc ~/.vim/vimrc
 ln -s ~/dotfiles/.vim/vundle.vim ~/.vim/vundle.vim
 
+## neovim
+ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
+ln -s ~/dotfiles/plugins.vim ~/.vim/plugins.vim
+
 ln -s ~/dotfiles/.editrc ~/.editrc
 ln -s ~/dotfiles/.inputrc ~/.inputrc
 ln -s ~/dotfiles/.profile ~/.profile
 ln -s ~/dotfiles/.bashrc ~/.bashrc
+
 ln -s ~/dotfiles/.zshrc ~/.zshrc 
 ln -s ~/dotfiles/.zsh_vi_mode.conf ~/.zsh_vi_mode.conf
+ln -s ~/dotfiles/oh-my-zsh/eastwood.zsh-theme ~/.oh-my-zsh/custom/themes/eastwood.zsh-theme
 
 ln -s ~/dotfiles/.ackrc ~/.ackrc
 ln -s ~/dotfiles/.ctags ~/.ctags
 ln -s ~/dotfiles/.dircolors ~/.dircolors
+
 ln -s ~/dotfiles/.pgclirc ~/.pgclirc
 ln -s ~/dotfiles/.psqlrc ~/.psqlrc  
 ln -s ~/dotfiles/.sqliterc ~/.sqliterc
@@ -28,8 +38,3 @@ ln -s ~/dotfiles/lock_screen.sh ~/lock_screen.sh
 
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-## neovim
-ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
-ln -s ~/dotfiles/plugins.vim ~/.vim/plugins.vim
-
-ln -s ~/dotfiles/oh-my-zsh/eastwood.zsh-theme ~/.oh-my-zsh/custom/themes/eastwood.zsh-theme
