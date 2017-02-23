@@ -198,7 +198,7 @@ nnoremap <leader>er :e $MYVIMRC<CR>
 nnoremap <leader>ev :e ~/.vim/plugins.vim<CR>
 nnoremap <leader>ep :e ~/.vim/plugin_settings.vim<CR>
 nnoremap <leader>en :e /media/data/Dropbox/vimnotes<CR>
-nnoremap <leader>ew :e /media/data/Dropbox/vimworknotes<CR>
+nnoremap <leader>ew :e /home/gy/Downloads/vimworknotes<CR>
 nnoremap <leader>eW :e /media/data/Dropbox/vimworknotes_deep<CR>
 nnoremap <leader>eS :e /media/data/Dropbox/vimworknotes_passwords<CR>
 nnoremap <leader>et :e ~/.tmux.conf<CR>
@@ -360,7 +360,7 @@ vnoremap 0 V
 set tags=project.tags,env.tags
 
 " generate simple tags (more flags for this command are in ~/.ctags conf file)
-nnoremap <leader>gtp :!ctags -f 'project.tags' --exclude={env,.env,feeds/mysql}<cr>
+nnoremap <leader>gtp :!ctags -f 'project.tags' --exclude={env,.env}<cr>
 " generate env tags
 nnoremap <leader>gte :!ctags -f 'env.tags' $VIRTUAL_ENV/lib/python2.7/site-packages<cr>
 " ===============================================

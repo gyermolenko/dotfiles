@@ -10,6 +10,8 @@ $ sudo make install
 
 xkb-switch
 sudo apt-get install libxkbfile-dev
+sudo apt install cmake
+git clone https://github.com/ierton/xkb-switch.git
 
 $ mkdir build && cd build
 $ cmake ..
