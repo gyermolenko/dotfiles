@@ -39,7 +39,7 @@ if has('nvim')
     " sneak highlights
     " let g:python3_host_prog = '$VIRTUAL_ENV/bin/python'
     let g:python_host_prog  = '/usr/bin/python'
-    let g:python3_host_prog = '/urs/bin/python3'
+    let g:python3_host_prog = '/usr/bin/python3'
 else
     set ttymouse=xterm2
     packadd! matchit
