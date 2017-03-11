@@ -22,11 +22,11 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # Go
-export GOPATH=$HOME/gocode
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+# export GOPATH=$HOME/gocode
+# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Tmux
-export PATH=$PATH:$HOME/tmux
+# export PATH=$PATH:$HOME/tmux
 
 
 # killall xcape

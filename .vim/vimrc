@@ -172,7 +172,7 @@ set relativenumber
 set list
 " set listchars=eol:↲,tab:▶▹,nbsp:␣,extends:…,trail:•
 set listchars=nbsp:␣,precedes:…,extends:…,tab:»\ ,trail:·
-" set listchars=eol:¬,
+" set listchars+=eol:¬,
 " set showbreak=…\ 
 " set showbreak=▹\ 
 set showbreak=↪\ 

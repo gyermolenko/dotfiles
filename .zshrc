@@ -182,14 +182,6 @@ bindkey -r '\e5'
 # stop terminal from freezing on <C-S>
 stty stop undef
 
-# view man pages in vim instead of less
-vman() {
-  vim -c "SuperMan $*"
-
-  if [ "$?" != "0" ]; then
-    echo "No manual entry for $*"
-  fi
-}
 # view man pages in nvim instead of less
 export MANPAGER="nvim -c 'set ft=man' -"
 
