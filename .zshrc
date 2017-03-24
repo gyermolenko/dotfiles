@@ -52,7 +52,7 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip django)
+plugins=(git pip django git-flow)
 
 # User configuration
 
@@ -124,7 +124,7 @@ alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=
 alias gsh="git show"
 
 alias sagi="sudo apt-get install"
-alias supgrade="sudo apt-get update && sudo apt-get upgrade"
+alias sup="sudo apt-get update && sudo apt-get upgrade"
 
 alias sba.="source env/bin/activate"
 alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
