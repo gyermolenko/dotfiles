@@ -18,10 +18,10 @@ ln -s ~/dotfiles/.vim/plugins.vim ~/.vim/plugins.vim
 
 ln -s ~/dotfiles/.editrc ~/.editrc
 ln -s ~/dotfiles/.inputrc ~/.inputrc
-# rm .profile .bashrc
+
+# rm .profile .bashrc .zshrc
 ln -s ~/dotfiles/.profile ~/.profile
 ln -s ~/dotfiles/.bashrc ~/.bashrc
-
 ln -s ~/dotfiles/.zshrc ~/.zshrc 
 ln -s ~/dotfiles/.zsh_vi_mode.conf ~/.zsh_vi_mode.conf
 ln -s ~/dotfiles/oh-my-zsh/eastwood.zsh-theme ~/.oh-my-zsh/custom/themes/eastwood.zsh-theme
