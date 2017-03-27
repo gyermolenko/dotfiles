@@ -1,8 +1,8 @@
 # folders
-# dotfiles
-# .vim
-# .config / nvim
-# .oh-my-zsh/custom/themes
+# ~ git clone dotfiles
+# mkdir .vim
+# mkdir .config/nvim
+# mkdir .oh-my-zsh/custom/themes
 
 
 ## vim
@@ -14,7 +14,7 @@ ln -s ~/dotfiles/.vim/vundle.vim ~/.vim/vundle.vim
 
 ## neovim
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
-ln -s ~/dotfiles/plugins.vim ~/.vim/plugins.vim
+ln -s ~/dotfiles/.vim/plugins.vim ~/.vim/plugins.vim
 
 ln -s ~/dotfiles/.editrc ~/.editrc
 ln -s ~/dotfiles/.inputrc ~/.inputrc
