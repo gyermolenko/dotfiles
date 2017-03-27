@@ -18,6 +18,7 @@ ln -s ~/dotfiles/.vim/plugins.vim ~/.vim/plugins.vim
 
 ln -s ~/dotfiles/.editrc ~/.editrc
 ln -s ~/dotfiles/.inputrc ~/.inputrc
+# rm .profile .bashrc
 ln -s ~/dotfiles/.profile ~/.profile
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 
