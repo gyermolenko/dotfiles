@@ -193,5 +193,5 @@ export MANPAGER="nvim -c 'set ft=man' -"
 
 
 # virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
