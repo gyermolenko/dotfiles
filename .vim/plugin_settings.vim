@@ -279,10 +279,11 @@ nnoremap <silent> [r :CtrlSpaceGoUp<CR>
 
 
 " === Ack =========
-nnoremap <leader>a :Ack 
-nnoremap <localleader>ac :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags 
+nnoremap <leader>a :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags,sql 
+nnoremap <localleader>aa :Ack 
+" nnoremap <localleader>ac :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags,sql 
 nnoremap <localleader>ay :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags "<c-r>+"
-nnoremap <localleader>av :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags "<c-r>/"
+nnoremap <localleader>a/ :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags "<c-r>/"
 
 
 " === Bclose ===
