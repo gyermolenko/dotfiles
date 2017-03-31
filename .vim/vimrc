@@ -479,23 +479,30 @@ endfunction
 
 " === Filetype-related ========================
 
+" expandtab shiftwidth=4 tabstop=4 softtabstop=4
+" et sw=4 ts=4 sts=4
+
 " removes underline in html for 'a' tags. and something more
 let html_no_rendering=1
 
-autocmd FileType python,javascript setlocal colorcolumn=80
+" === python ===
+autocmd FileType python setlocal colorcolumn=80
 " do not show docstring window during completion
 autocmd FileType python setlocal completeopt-=preview
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType python setlocal et sw=4 ts=4 sts=4
 
-autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
-autocmd FileType htmldjango setlocal commentstring={#\ %s\ #}
+autocmd FileType xml,html setlocal et sw=4 ts=4 sts=4
+autocmd FileType htmljinja,htmldjango setlocal et sw=4 ts=4 sts=4
+autocmd FileType htmljinja,htmldjango setlocal commentstring={#\ %s\ #}
+
 " remove annoying <:> pair highligh in html
 autocmd FileType xml,html,htmljinja,htmldjango set matchpairs=(:),[:],{:}
 
+" === sql ===
 autocmd BufRead,BufNewFile *.sql set filetype=pgsql
-autocmd FileType sql setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType sql setlocal et sw=2 ts=2 sts=2
 
+autocmd FileType javascript setlocal colorcolumn=80
 autocmd BufRead,BufNewFile *.go setlocal nolist
 
 augroup ft_html
@@ -505,6 +512,19 @@ augroup ft_html
     " Django variables
     au FileType html,jinja,htmldjango,htmljinja inoremap <buffer> <c-y> {{<space><space>}}<left><left><left>
 augroup END
+
+" === pug (former jade) ===
+autocmd Filetype pug setlocal ts=2 sts=2 sw=2
+
+augroup ft_pug
+    au!
+    au FileType pug inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
+    au FileType pug inoremap <buffer> <c-y> {{<space><space>}}<left><left><left>
+augroup END
+
+" autocmd FileType pug setlocal comments=://-,://
+" autocmd FileType pug setlocal commentstring=//-\ %s
+
 
 " do not extend comment-string to the next lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

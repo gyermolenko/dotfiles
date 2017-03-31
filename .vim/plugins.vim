@@ -41,7 +41,7 @@ Plug 'mileszs/ack.vim'
 " TODO: FIX conflict with vim-asterisk
 " Plug 'henrik/vim-indexed-search'
 " some issues in tracker
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -101,7 +101,7 @@ Plug 'lyokha/vim-xkbswitch'
 Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 " ====================================================================
 
 
