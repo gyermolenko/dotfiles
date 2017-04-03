@@ -186,7 +186,7 @@ nmap <leader>c gcc
 
 
 " === CtrlSpace ===
-let g:CtrlSpaceDefaultMappingKey = "<C-Space>"
+let g:CtrlSpaceDefaultMappingKey = "<C-Space> "
 let g:CtrlSpaceSaveWorkspaceOnExit = 0
 let g:CtrlSpaceLoadLastWorkspaceOnStart = 0
 let g:CtrlSpaceUseTabline = 1
