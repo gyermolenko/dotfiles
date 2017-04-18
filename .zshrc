@@ -114,7 +114,7 @@ alias cgc="cd ~/gocode/src/github.com/gy"
 
 alias i2="ipython"
 alias i="ipython3"
-alias i35="python3.5 -m IPython"
+# alias i35="python3.5 -m IPython"
 
 alias gs="git status"
 alias gds="git diff --staged"
@@ -122,6 +122,9 @@ alias gl="git log"
 alias gco="git checkout"
 alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gsh="git show"
+
+alias dk="docker"
+alias dkc="docker-compose"
 
 alias sagi="sudo apt-get install"
 alias sup="sudo apt-get update && sudo apt-get upgrade"
