@@ -21,6 +21,7 @@ let g:pymode_trim_whitespaces = 0
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_highlight_equal_operator = 0
 let g:pymode_syntax_builtin_types = 0
+let g:pymode_python = 'python3'
 
 " let python_highlight_all=0
 " let python_highlight_exceptions=0
@@ -29,21 +30,41 @@ let g:pymode_syntax_builtin_types = 0
 " Turn on code checking
 let g:pymode_lint = 1
 "let g:pymode_lint_signs = 0
-" let g:pymode_lint_checkers="pyflakes,pep8"
+let g:pymode_lint_checkers="pyflakes,pep8"
+" let g:pymode_lint_checkers="pep8"
 " let g:pymode_lint_ignore="E1116,E127,E128,E261,E302,E303,E501,E502,E711,E712,W0404,W391,W601,W0611,C0110"
-let g:pymode_lint_ignore="W0611,W0612"
+" let g:pymode_lint_ignore="W0611,W0612"
 " W0611: Unused import %s
 " W0612: Unused variable %r
 " let g:pymode_lint_ignore="E501,W601,C0110"
 " Check code on every save (if file has been modified)
 let g:pymode_lint_on_write = 0
 let g:pymode_lint_unmodified = 0
-nnoremap <F9> :PymodeLint<CR>
+" nnoremap <F9> :PymodeLint<CR>
 " let g:pymode_lint_write = 1
 let g:pymode_virtualenv = 1
 let g:pymode_breakpoint = 1
 " let g:pymode_breakpoint_key = '<leader>B'
 let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
+
+nnoremap <leader>b Oimport ipdb; ipdb.set_trace()<Esc>
+
+" === Syntastic
+nnoremap <F9> :SyntasticCheck pylint<CR>
+let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_python_pylint_exec = "/usr/bin/python3"
+" let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_python_pylint_quiet_messages = {
+    \ "regex": 'Unable to import\|Invalid constant name\|docstring\|Too few public methods\|Method could be a function\|Invalid argument name\|Invalid variable name' }
+
+    " \ "regex": '\V
+    " \ Unable to import
+    " \ \|Invalid constant name
+    " \ \|docstring
+    " \ ' }
 
 
 " === Jedi
@@ -274,8 +295,12 @@ nnoremap cog :GitGutterToggle<cr>
 
 " === CtrlSpace [2] ===
 " because of unimpaired ]b . But also i have <c-f>/<c-b>
-nnoremap <silent> ]r :CtrlSpaceGoDown<CR>
-nnoremap <silent> [r :CtrlSpaceGoUp<CR>
+" nnoremap <silent> ]r :CtrlSpaceGoDown<CR>
+" nnoremap <silent> [r :CtrlSpaceGoUp<CR>
+
+" for Syntastic's location list
+nnoremap [r :lp<cr>
+nnoremap ]r :lne<cr>
 
 
 " === Ack =========
