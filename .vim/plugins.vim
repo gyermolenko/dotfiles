@@ -10,7 +10,7 @@ call plug#begin(g:editor_root . '/plugged')
 
 "" Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
 " Plug 'klen/python-mode'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 """" Autocompletion
 Plug 'davidhalter/jedi-vim'

@@ -66,6 +66,9 @@ let g:syntastic_python_pylint_quiet_messages = {
     " \ \|docstring
     " \ ' }
 
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+" nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
 
 " === Jedi
 let g:jedi#popup_on_dot = 0

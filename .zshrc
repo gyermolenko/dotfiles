@@ -138,7 +138,31 @@ alias sbac="source /media/data/Projects/cruft_env/env/bin/activate"
 alias dd="deactivate"
 alias wo="workon"
 
-alias fih="find . -maxdepth 1 -iname"
+# alias fih="find . -maxdepth 1 -iname"
+
+fih() {
+    find . -maxdepth 1 -iname "*$1*"
+}
+
+# docker exec -it $1 ps aux | grep python | awk '{ print $2 }' | xargs -I{} docker exec -i $1 kill 
+dkill() {
+
+    if [[ $# -ne 2 ]] ; then
+        echo "dkill [container name] [process name]"
+        return 1
+    fi
+
+    local pid=$(docker exec -it $1 ps aux | grep $2 | awk '{ print $2 }')
+
+    if [ -z "$pid" ] ; then
+        echo "process not found"
+        return 1
+    else
+        docker exec -it $1 kill $pid
+    fi
+
+}
+
 alias grex="grep -r --exclude-dir={env,.git} --exclude={\*.pyc,\*.tags}"
 # alias tr="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 2"
 # alias tre="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 3"
