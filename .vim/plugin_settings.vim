@@ -47,7 +47,7 @@ let g:pymode_breakpoint = 1
 " let g:pymode_breakpoint_key = '<leader>B'
 let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
 
-nnoremap <leader>b Oimport ipdb; ipdb.set_trace()<Esc>
+nnoremap <leader>b Oimport ipdb; ipdb.set_trace()<Esc>:update<CR>
 
 " === Syntastic
 nnoremap <F9> :SyntasticCheck pylint<CR>

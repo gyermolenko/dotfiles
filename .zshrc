@@ -122,6 +122,7 @@ alias gl="git log"
 alias gco="git checkout"
 alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gsh="git show"
+alias gcm="git commit -m"
 
 alias dk="docker"
 alias dkc="docker-compose"
@@ -145,7 +146,10 @@ fih() {
 }
 
 # docker exec -it $1 ps aux | grep python | awk '{ print $2 }' | xargs -I{} docker exec -i $1 kill 
+# Kill process in running docker container by its name
 dkill() {
+    # Example:
+    # $ dkill <container_name> <process_name>
 
     if [[ $# -ne 2 ]] ; then
         echo "dkill [container name] [process name]"
@@ -174,7 +178,8 @@ alias ,et="vi ~/.tmux.conf"
 # alias tmuxn="tmux-next"
 # alias tmuxsw="./tmux_setup.sh"
 # alias tmuxsh="./tmux_setup_home.sh"
-alias ag="ag --color-match 1\;31"
+
+# alias ag="ag --color-match 1\;31"
 
 # known issues: colors for pure vim are bad in tmux (black right side of each row)
 export TERM=xterm-256color
