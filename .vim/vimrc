@@ -299,9 +299,20 @@ nnoremap " f<space>r<CR>l
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <Esc><F2>
-nmap <leader>t :update<CR>
-vmap <leader>t <Esc><leader>gv
+" nmap <leader>t :update<CR>
+" vmap <leader>t <Esc><leader>gv
 nnoremap <leader>z :NERDTreeToggle<CR>
+
+
+
+
+nnoremap <leader>v /<c-r>+<cr>
+nnoremap 0 :update<CR>
+vnoremap 0 :update<CR>
+
+
+
+
 
 " " scroll by n lines at once
 " nnoremap <C-e> ^5<C-e>5j
@@ -343,11 +354,6 @@ nnoremap <c-p> <C-^>
 
 " since i use q for other things
 nnoremap ! q
-
-nnoremap <leader>v /<c-r>+<cr>
-nnoremap 0 V
-vnoremap 0 V
-
 
 " ========== end of Custom mappings ==================================
 " ===================================================================
