@@ -1,5 +1,4 @@
-sudo apt-get install git gcc make curl cmake
-sudo apt-get install xclip
+sudo apt-get install git gcc make cmake curl xclip
 
 xcape
 $ sudo apt-get install pkg-config libx11-dev libxtst-dev libxi-dev
