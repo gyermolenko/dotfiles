@@ -1,0 +1,40 @@
+set ignorecase
+set smartcase
+
+" number of current line
+set number
+" reletive numbers for up/down
+set relativenumber
+
+" Always show a statusline
+set laststatus=2
+
+" Integrate with system clipboard
+set clipboard=unnamedplus,unnamed
+
+
+let mapleader = ","
+
+" Reload .ideavimrc
+nnoremap ,rr :source ~/.ideavimrc<CR>
+
+" Home row beginning / end of line
+noremap H ^
+noremap L $
+
+" highlight last inserted text
+nnoremap gs `[v`]
+
+" Split lines on space. opposit to J
+nnoremap " f<space>r<CR>l
+
+" Easier split navigations
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+
+" ========== differs from vim config ====================
+" IdeaVim uses 'a' for alt instead of Vim's 'm'
+nmap <a-j> 15gj
+nmap <a-k> 15gk
