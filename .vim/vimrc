@@ -285,7 +285,6 @@ vnoremap <expr> k (v:count > 1 ? "m'" . v:count . 'k' : 'gk')
 
 " highlight last inserted text
 nnoremap gs `[v`]
-" gV `[v`] - inconvenient
 " gl/gh are vacant
 
 " horizontal scroll
@@ -303,15 +302,12 @@ imap <F2> <Esc><F2>
 " vmap <leader>t <Esc><leader>gv
 nnoremap <leader>z :NERDTreeToggle<CR>
 
-
-
-
 nnoremap <leader>v /<c-r>+<cr>
 nnoremap 0 :update<CR>
 vnoremap 0 :update<CR>
 
-
-
+" since i use q for other things
+nnoremap ! q
 
 
 " " scroll by n lines at once
@@ -352,8 +348,6 @@ cnoremap <C-p> <Up>
 " switch to alternate buffer
 nnoremap <c-p> <C-^>
 
-" since i use q for other things
-nnoremap ! q
 
 " ========== end of Custom mappings ==================================
 " ===================================================================
