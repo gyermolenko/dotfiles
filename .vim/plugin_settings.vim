@@ -307,7 +307,7 @@ nnoremap ]r :lne<cr>
 
 
 " === Ack =========
-nnoremap <leader>a :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags,sql 
+nnoremap <leader>a :Ack --ignore-dir={env,.env,.idea} --ignore-file=ext:js,tags,sql,po 
 nnoremap <localleader>aa :Ack 
 " nnoremap <localleader>ac :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags,sql 
 nnoremap <localleader>ay :Ack --ignore-dir={env,.env} --ignore-file=ext:js,tags "<c-r>+"
