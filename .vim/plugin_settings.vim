@@ -134,7 +134,7 @@ let g:ctrlp_bufpath_mod = ''
 " let g:ctrlp_bufpath_mod = ':~:.:h'
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|venv|env|\.env)$',
+  \ 'dir':  '\v[\/](\.git|venv|env|\.env|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 
@@ -154,8 +154,10 @@ let NERDTreeWinSize = 46
 " i want to use Sneak in NTree
 let g:NERDTreeMapOpenVSplit = '\s'
 " and also easymotion
-let g:NERDTreeMapQuit = '\q'
-let g:NERDTreeQuitOnOpen = 1
+" let g:NERDTreeMapQuit = '\q'
+" close sidebar
+" let g:NERDTreeQuitOnOpen = 1
+" let g:NERDTreeMapOpenInTab='o'
 
 " === SuperTab ===
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
