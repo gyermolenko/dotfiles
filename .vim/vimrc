@@ -197,10 +197,10 @@ nnoremap <leader>er :e $MYVIMRC<CR>
 " nnoremap <leader>ev :e ~/.vim/vundle.vim<CR>
 nnoremap <leader>ev :e ~/.vim/plugins.vim<CR>
 nnoremap <leader>ep :e ~/.vim/plugin_settings.vim<CR>
-nnoremap <leader>en :e /media/data/Dropbox/vimnotes<CR>
-nnoremap <leader>ew :e /home/gy/Downloads/vimworknotes<CR>
-nnoremap <leader>eW :e /media/data/Dropbox/vimworknotes_deep<CR>
-nnoremap <leader>eS :e /media/data/Dropbox/vimworknotes_passwords<CR>
+nnoremap <leader>en :e /home/gy/Dropbox/vimnotes<CR>
+nnoremap <leader>ew :e /home/gy/Dropbox/vimworknotes<CR>
+nnoremap <leader>eW :e /home/gy/Dropbox/vimworknotes_deep<CR>
+" nnoremap <leader>eS :e /media/data/Dropbox/vimworknotes_passwords<CR>
 nnoremap <leader>et :e ~/.tmux.conf<CR>
 nnoremap <leader>ez :e ~/.zshrc<CR>
 " Reload vimrc
