@@ -16,7 +16,7 @@ call plug#begin(g:editor_root . '/plugged')
 Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 " Group dependencies, vim-snippets depends on ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 "" status-tabline

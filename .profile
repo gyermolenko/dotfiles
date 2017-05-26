@@ -31,4 +31,4 @@ fi
 
 # killall xcape
 # xcape -e 'Shift_L=BackSpace' -t 300
-xcape -e 'Caps_Lock=Escape' -t 300
+# xcape -e 'Caps_Lock=Escape' -t 300
