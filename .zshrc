@@ -109,11 +109,13 @@ alias s="ls -laF -h --group-directories-first"
 alias c="clear"
 # alias lc="ls -AF -h --group-directories-first"
 
-alias cpr="cd /media/data/Dropbox/Projects"
+alias cpr="cd ~/Dropbox/Projects"
 alias cgc="cd ~/gocode/src/github.com/gy"
 
-alias i2="ipython"
-alias i="ipython3"
+# alias i2="ipython"
+# alias i="ipython3"
+alias i2="python -m IPython"
+alias i="python3 -m IPython"
 # alias i35="python3.5 -m IPython"
 
 alias gs="git status"
@@ -131,13 +133,13 @@ alias sagi="sudo apt-get install"
 alias sup="sudo apt-get update && sudo apt-get upgrade"
 
 alias sba.="source env/bin/activate"
-alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
-alias sbaa="source /media/data/Projects/async_env/env/bin/activate"
-alias sbaf="source /media/data/Projects/flask_env/env/bin/activate"
+# alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
+# alias sbaa="source /media/data/Projects/async_env/env/bin/activate"
+# alias sbaf="source /media/data/Projects/flask_env/env/bin/activate"
 # alias sbad="source /media/data/Projects/django_env/env/bin/activate"
-alias sbac="source /media/data/Projects/cruft_env/env/bin/activate"
+# alias sbac="source /media/data/Projects/cruft_env/env/bin/activate"
 alias dd="deactivate"
-alias wo="workon"
+# alias wo="workon"
 
 # alias fih="find . -maxdepth 1 -iname"
 
@@ -224,6 +226,10 @@ export MANPAGER="nvim -c 'set ft=man' -"
 # fi
 
 
-# virtualenvwrapper
+# virtualenvwrapper lazy-load
 # export WORKON_HOME=$HOME/.virtualenvs
 # source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh

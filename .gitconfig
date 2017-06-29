@@ -1,0 +1,6 @@
+[user]
+	name = Grygorii Yermolenko
+	email = gyermolenko@gmail.com
+[core]
+	editor = nvim
+	excludesfile = /home/gy/.gitignore_global
