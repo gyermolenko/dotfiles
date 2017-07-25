@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/gy/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -105,7 +105,17 @@ zle -N fancy-ctrl-z
 bindkey '' fancy-ctrl-z
 # # ====================================
 
-alias s="ls -laF -h --group-directories-first"
+# alias s="ls -laF -h --group-directories-first"
+
+case `uname` in
+  Darwin)
+	alias s="/usr/local/bin/gls -laF -h --group-directories-first --color"
+  ;;
+  Linux)
+	alias s="ls -laF -h --group-directories-first"
+  ;;
+esac
+
 alias c="clear"
 # alias lc="ls -AF -h --group-directories-first"
 
@@ -173,9 +183,20 @@ alias grex="grep -r --exclude-dir={env,.git} --exclude={\*.pyc,\*.tags}"
 # alias tr="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 2"
 # alias tre="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 3"
 
+if ! [ -x "$(command -v nvim)" ]; then
+  echo 'nvim is not installed.' >&2
+  alias vi="vim"
+  # exit 1
+else
+  alias vi="nvim"
+fi
+
+# alias vi="nvim"
+
 alias ,ez="vi ~/.zshrc"
 alias ,rz="source ~/.zshrc"
 alias ,et="vi ~/.tmux.conf"
+
 # alias tmux="tmux -2"
 # alias tmuxn="tmux-next"
 # alias tmuxsw="./tmux_setup.sh"
@@ -188,7 +209,6 @@ export TERM=xterm-256color
 # known issues: cursor shape in tmux remains like a block
 # export TERM=screen-256color
 
-alias vi="nvim"
 
 # Colored man pages: http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
 # Less Colors for Man Pages
@@ -228,8 +248,6 @@ export MANPAGER="nvim -c 'set ft=man' -"
 
 # virtualenvwrapper lazy-load
 # export WORKON_HOME=$HOME/.virtualenvs
-# source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=$HOME/.virtualenvs
 # export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
