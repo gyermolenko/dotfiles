@@ -110,6 +110,7 @@ bindkey '' fancy-ctrl-z
 case `uname` in
   Darwin)
 	alias s="/usr/local/bin/gls -laF -h --group-directories-first --color"
+	export PATH=~/Library/Python/2.7/bin:$PATH
   ;;
   Linux)
 	alias s="ls -laF -h --group-directories-first"
@@ -170,7 +171,7 @@ dkill() {
 
     local pid=$(docker exec -it $1 ps aux | grep $2 | awk '{ print $2 }')
 
-    if [ -z "$pid" ] ; then
+	    if [ -z "$pid" ] ; then
         echo "process not found"
         return 1
     else
@@ -183,15 +184,16 @@ alias grex="grep -r --exclude-dir={env,.git} --exclude={\*.pyc,\*.tags}"
 # alias tr="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 2"
 # alias tre="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 3"
 
-if ! [ -x "$(command -v nvim)" ]; then
-  echo 'nvim is not installed.' >&2
-  alias vi="vim"
-  # exit 1
-else
-  alias vi="nvim"
-fi
+# if ! [ -x "$(command -v nvim)" ]; then
+#   echo 'nvim is not installed.' >&2
+#   alias vi="vim"
+#   # exit 1
+# else
+#   alias vi="nvim"
+# fi
 
 # alias vi="nvim"
+alias vi="vim"
 
 alias ,ez="vi ~/.zshrc"
 alias ,rz="source ~/.zshrc"
