@@ -117,6 +117,14 @@ case `uname` in
   ;;
 esac
 
+if [ -d "/usr/local/opt/mysql@5.6/bin" ] ; then
+    export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+fi
+
+if [ -d "/usr/local/go/bin/" ] ; then
+    export PATH="/usr/local/go/bin:$PATH"
+fi
+
 alias c="clear"
 # alias lc="ls -AF -h --group-directories-first"
 
@@ -144,6 +152,7 @@ alias sagi="sudo apt-get install"
 alias sup="sudo apt-get update && sudo apt-get upgrade"
 
 alias sba.="source env/bin/activate"
+alias sbar="source ~/.venvs/reporting/bin/activate"
 # alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
 # alias sbaa="source /media/data/Projects/async_env/env/bin/activate"
 # alias sbaf="source /media/data/Projects/flask_env/env/bin/activate"
