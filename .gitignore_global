@@ -1,2 +1,7 @@
+# git config --global core.excludesfile ~/.gitignore_global
+
 .idea/
 .vscode/
+.DS_Store
+__pycache__/
+
