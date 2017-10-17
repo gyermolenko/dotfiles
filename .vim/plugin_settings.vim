@@ -454,11 +454,11 @@ let g:EasyMotion_keys = 'jkloimchgewa,unpqrzxvtybsdf;'
 
 
 " === vim-xkbswitch ===
-let g:XkbSwitchEnabled = 1 
-let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.so'
+" let g:XkbSwitchEnabled = 1 
+" let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.so'
 " let g:XkbSwitchIMappings = ['ru']
 " let g:XkbSwitchILayout = 'ru'
-let g:XkbSwitchNLayout = 'us'
+" let g:XkbSwitchNLayout = 'us'
 
 " === vim-tmux-navigator ===
 let g:tmux_navigator_no_mappings = 1
