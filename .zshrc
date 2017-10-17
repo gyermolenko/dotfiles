@@ -105,31 +105,52 @@ zle -N fancy-ctrl-z
 bindkey '' fancy-ctrl-z
 # # ====================================
 
-# alias s="ls -laF -h --group-directories-first"
 
+# === Cases and IFs ========================================
+# ==========================================================
 case `uname` in
   Darwin)
-	alias s="/usr/local/bin/gls -laF -h --group-directories-first --color"
-	export PATH=~/Library/Python/2.7/bin:$PATH
+    alias s="/usr/local/bin/gls -laF -h --group-directories-first --color"
+
+    export PATH=~/Library/Python/2.7/bin:$PATH
+
   ;;
   Linux)
-	alias s="ls -laF -h --group-directories-first"
+    alias s="ls -laF -h --group-directories-first"
+
   ;;
 esac
+# ==========================================================
+
+if ! [ -x "$(command -v nvim)" ]; then
+  echo 'nvim is not installed.' >&2
+  alias vi="vim"
+  # exit 1
+else
+  alias vi="nvim"
+
+  # view man pages in nvim instead of less
+  export MANPAGER="nvim -c 'set ft=man' -"
+fi
+
 
 if [ -d "/usr/local/opt/mysql@5.6/bin" ] ; then
     export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 fi
 
-if [ -d "/usr/local/go/bin/" ] ; then
-    export PATH="/usr/local/go/bin:$PATH"
-fi
+# if [ -d "/usr/local/go/bin/" ] ; then
+#     export PATH="/usr/local/go/bin:$PATH"
+#     export GOPATH="~/go"
+#     # export GOROOT="/usr/local/go"
+# fi
+# export PATH="/Users/gyermolenko/miniconda3/bin:$PATH"
+
+# ==========================================================
+
 
 alias c="clear"
-# alias lc="ls -AF -h --group-directories-first"
 
 alias cpr="cd ~/Dropbox/Projects"
-alias cgc="cd ~/gocode/src/github.com/gy"
 
 # alias i2="ipython"
 # alias i="ipython3"
@@ -152,12 +173,7 @@ alias sagi="sudo apt-get install"
 alias sup="sudo apt-get update && sudo apt-get upgrade"
 
 alias sba.="source env/bin/activate"
-alias sbar="source ~/.venvs/reporting/bin/activate"
-# alias sbam="source /media/data/Projects/jupyter_env/env/bin/activate"
-# alias sbaa="source /media/data/Projects/async_env/env/bin/activate"
-# alias sbaf="source /media/data/Projects/flask_env/env/bin/activate"
-# alias sbad="source /media/data/Projects/django_env/env/bin/activate"
-# alias sbac="source /media/data/Projects/cruft_env/env/bin/activate"
+# alias sbar="source ~/.venvs/reporting/bin/activate"
 alias dd="deactivate"
 # alias wo="workon"
 
@@ -193,16 +209,7 @@ alias grex="grep -r --exclude-dir={env,.git} --exclude={\*.pyc,\*.tags}"
 # alias tr="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 2"
 # alias tre="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 3"
 
-# if ! [ -x "$(command -v nvim)" ]; then
-#   echo 'nvim is not installed.' >&2
-#   alias vi="vim"
-#   # exit 1
-# else
-#   alias vi="nvim"
-# fi
 
-# alias vi="nvim"
-alias vi="vim"
 
 alias ,ez="vi ~/.zshrc"
 alias ,rz="source ~/.zshrc"
@@ -247,8 +254,6 @@ bindkey -r '\e5'
 # stop terminal from freezing on <C-S>
 stty stop undef
 
-# view man pages in nvim instead of less
-export MANPAGER="nvim -c 'set ft=man' -"
 
 # source ~/.zsh_vi_mode.conf
 
