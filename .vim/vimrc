@@ -42,7 +42,8 @@ if has('nvim')
     let g:python3_host_prog = '/usr/bin/python3'
 else
     set ttymouse=xterm2
-    packadd! matchit
+    " !cp $VIMRUNTIME/macros/matchit.vim ~/.vim/plugin
+    " packadd! matchit
 endif
 
 
