@@ -101,12 +101,15 @@ else
 fi
 
 
+if [ -d "/usr/local/opt/postgresql@9.6/bin" ] ; then
+    export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+fi
 if [ -d "/usr/local/opt/mysql@5.6/bin" ] ; then
     export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 fi
 
 if [ -f /usr/local/bin/go ]; then
-    echo "golang is present"
+    # echo "golang is present"
 
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
@@ -147,10 +150,6 @@ alias dkc="docker-compose"
 alias sagi="sudo apt-get install"
 alias sup="sudo apt-get update && sudo apt-get upgrade"
 
-alias sba.="source env/bin/activate"
-# alias sbar="source ~/.venvs/reporting/bin/activate"
-alias dd="deactivate"
-# alias wo="workon"
 
 # alias fih="find . -maxdepth 1 -iname"
 
@@ -237,6 +236,9 @@ stty stop undef
 if [ -d "$HOME/miniconda3/bin"  ]; then
     echo 'miniconda3 added to PATH' >&2
     export PATH=$HOME/miniconda3/bin:$PATH
+
+    alias sa="source activate"
+    alias sd="source deactivate"
 else
     echo 'miniconda3 not installed' >&2
     if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
@@ -252,6 +254,12 @@ fi
 # if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
 #   source "${VIRTUAL_ENV}/bin/activate"
 # fi
+
+alias sba.="source env/bin/activate"
+# alias sbar="source ~/.venvs/reporting/bin/activate"
+alias dd="deactivate"
+# alias wo="workon"
+
 # =============================================================
 
 export LC_ALL=en_US.UTF-8
