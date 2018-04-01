@@ -248,6 +248,8 @@ else
         # export PROJECT_HOME=$HOME/Devel
         export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
         source /usr/local/bin/virtualenvwrapper_lazy.sh
+    else
+        echo 'virtualenvwrapper is also not installed' >&2
     fi
 fi
 
