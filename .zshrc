@@ -90,7 +90,7 @@ esac
 # ==========================================================
 
 if ! [ -x "$(command -v nvim)" ]; then
-  echo 'nvim is not installed.' >&2
+  # echo 'nvim is not installed.' >&2
   alias vi="vim"
 else
   echo 'nvim is installed.' >&2
@@ -126,8 +126,6 @@ fi
 # ==========================================================
 
 
-# alias c="clear"
-
 alias cpr="cd ~/Dropbox/Projects"
 
 # alias i2="ipython"
@@ -144,8 +142,8 @@ alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=
 alias gsh="git show"
 alias gcm="git commit -m"
 
-alias dk="docker"
-alias dkc="docker-compose"
+# alias dk="docker"
+# alias dkc="docker-compose"
 
 alias sagi="sudo apt-get install"
 alias sup="sudo apt-get update && sudo apt-get upgrade"
@@ -233,23 +231,41 @@ stty stop undef
 
 
 # ================ Virtual envs ====================================
-if [ -d "$HOME/miniconda3/bin"  ]; then
-    echo 'miniconda3 added to PATH' >&2
-    export PATH=$HOME/miniconda3/bin:$PATH
+if [ -d "$HOME/.pyenv"  ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    echo 'pyenv added to PATH' >&2
 
-    alias sa="source activate"
-    alias sd="source deactivate"
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init -)"
+    fi
+
+    if [ -d "$HOME/.pyenv/plugins/pyenv-virtualenv"  ]; then
+        eval "$(pyenv virtualenv-init -)"
+
+        alias pa="pyenv activate"
+        alias pd="pyenv deactivate"
+    fi
+
 else
-    echo 'miniconda3 not installed' >&2
-    if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
-        echo 'virtualenvwrapper activated' >&2
-        # virtualenvwrapper lazy-load
-        # export WORKON_HOME=$HOME/.virtualenvs
-        # export PROJECT_HOME=$HOME/Devel
-        export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-        source /usr/local/bin/virtualenvwrapper_lazy.sh
+    if [ -d "$HOME/miniconda3/bin"  ]; then
+        export PATH=$HOME/miniconda3/bin:$PATH
+        echo 'miniconda3 added to PATH' >&2
+
+        alias sa="source activate"
+        alias sd="source deactivate"
     else
-        echo 'virtualenvwrapper is also not installed' >&2
+        echo 'miniconda3 not installed' >&2
+        if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+            echo 'virtualenvwrapper activated' >&2
+            # virtualenvwrapper lazy-load
+            # export WORKON_HOME=$HOME/.virtualenvs
+            # export PROJECT_HOME=$HOME/Devel
+            export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+            source /usr/local/bin/virtualenvwrapper_lazy.sh
+        else
+            echo 'virtualenvwrapper is also not installed' >&2
+        fi
     fi
 fi
 
