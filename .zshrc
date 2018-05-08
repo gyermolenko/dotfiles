@@ -248,6 +248,7 @@ if [ -d "$HOME/.pyenv"  ]; then
     fi
 
 else
+    echo 'pyenv not installed' >&2
     if [ -d "$HOME/miniconda3/bin"  ]; then
         export PATH=$HOME/miniconda3/bin:$PATH
         echo 'miniconda3 added to PATH' >&2
