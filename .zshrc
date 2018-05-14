@@ -129,9 +129,9 @@ fi
 alias cpr="cd ~/Dropbox/Projects"
 
 # alias i2="ipython"
-# alias i="ipython3"
-alias i2="python -m IPython"
-alias i="python3 -m IPython"
+alias i="ipython"
+# alias i2="python -m IPython"
+# alias i="python3 -m IPython"
 # alias i35="python3.5 -m IPython"
 
 alias gs="git status"
