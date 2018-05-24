@@ -127,6 +127,7 @@ fi
 
 
 alias cpr="cd ~/Dropbox/Projects"
+alias pig="pip list | grep -i "
 
 # alias i2="ipython"
 alias i="ipython"
