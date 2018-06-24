@@ -122,6 +122,10 @@ if [ -f /usr/local/bin/go ]; then
 
 fi
 
+# rust
+if [ -d $HOME/.cargo/bin ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 # ==========================================================
 
@@ -235,7 +239,7 @@ stty stop undef
 if [ -d "$HOME/.pyenv"  ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
-    echo 'pyenv added to PATH' >&2
+    # echo 'pyenv added to PATH' >&2
 
     if command -v pyenv 1>/dev/null 2>&1; then
         eval "$(pyenv init -)"
