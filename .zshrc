@@ -108,6 +108,11 @@ if [ -d "/usr/local/opt/mysql@5.6/bin" ] ; then
     export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 fi
 
+if [ -d "/opt/apache-spark/" ] ; then
+    export SPARK_HOME=/opt/apache-spark/spark-2.3.1-bin-hadoop2.7
+    export PATH="$HOME/bin:$HOME/.local/bin:$SPARK_HOME:$PATH"
+fi
+
 if [ -f /usr/local/bin/go ]; then
     # echo "golang is present"
 
@@ -131,7 +136,12 @@ fi
 
 
 alias cpr="cd ~/Dropbox/Projects"
+
 alias pig="pip list | grep -i "
+
+alias pe="pyenv"
+alias pev="pyenv versions"
+alias peu="pyenv uninstall"
 
 # alias i2="ipython"
 alias i="ipython"
@@ -139,6 +149,7 @@ alias i="ipython"
 # alias i="python3 -m IPython"
 # alias i35="python3.5 -m IPython"
 
+## git
 alias gs="git status"
 alias gds="git diff --staged"
 alias gl="git log"
@@ -147,6 +158,7 @@ alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=
 alias gsh="git show"
 alias gcm="git commit -m"
 
+## docker
 # alias dk="docker"
 # alias dkc="docker-compose"
 
