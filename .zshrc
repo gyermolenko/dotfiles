@@ -296,6 +296,8 @@ alias sba.="source env/bin/activate"
 alias dd="deactivate"
 # alias wo="workon"
 
+# ======= Useful ==========================================
+# $ sudo service --status-all | grep postgr
 # =============================================================
 
 export LC_ALL=en_US.UTF-8
