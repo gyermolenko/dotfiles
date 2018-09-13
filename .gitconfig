@@ -2,5 +2,13 @@
 	name = Grygorii Iermolenko
 	email = gyermolenko@gmail.com
 [core]
-	editor = vi
-	excludesfile = /home/gy/.gitignore_global
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[push]
+	default = simple
+
+[includeIf "gitdir:~/dotfiles/"]
+	path = ~/dotfiles/.gitconfig_include
+
+[includeIf "gitdir:~/code/gpcalc/"]
+	path = ~/code/gpcalc/.gitconfig_include
