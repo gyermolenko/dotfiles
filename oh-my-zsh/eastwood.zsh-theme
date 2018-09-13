@@ -22,6 +22,8 @@ git_custom_status() {
 
 # PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B$%b '
 
-local prompt_jobs="%(1j.%{$fg[yellow]%}%j%{$reset_color%}%{$fg[red]%}z%{$reset_color%} .)"
-PROMPT='${prompt_jobs}$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B$%b '
+# local prompt_jobs="%(1j.%{$fg[yellow]%}%j%{$reset_color%}%{$fg[red]%}z%{$reset_color%} .)"
+# PROMPT='${prompt_jobs}$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B$%b '
 
+NEWLINE=$'\n'
+PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B${NEWLINE}$%b '
