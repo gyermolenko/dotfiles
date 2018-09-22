@@ -19,6 +19,12 @@ git_custom_status() {
     echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
 }
+git_custom_status_wo_dirty() {
+  local cb=$(current_branch)
+  if [ -n "$cb" ]; then
+    echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  fi
+}
 
 # PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B$%b '
 
@@ -26,4 +32,11 @@ git_custom_status() {
 # PROMPT='${prompt_jobs}$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B$%b '
 
 NEWLINE=$'\n'
-PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B${NEWLINE}$%b '
+# white $ on a new line
+# PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B${NEWLINE}$%b '
+
+# continue cyan to $ char
+# PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%B${NEWLINE}$%{$reset_color%}%b '
+
+# no red * when git is dirty
+PROMPT='$(git_custom_status_wo_dirty)%{$fg[cyan]%}[%~% ]%B${NEWLINE}$%{$reset_color%}%b '
