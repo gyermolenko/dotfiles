@@ -86,6 +86,8 @@ case `uname` in
 
   ;;
 esac
+
+alias ы="echo Damn keyboard layouts; ls"
 # ==========================================================
 
 if ! [ -x "$(command -v nvim)" ]; then
@@ -137,13 +139,13 @@ fi
 alias cpr="cd ~/Dropbox/Projects"
 
 alias pis="pip list"
-alias pisg="pip list | grep -i "
+alias pig="pip list | grep -i "
 
 alias pe="pyenv"
 alias pev="pyenv versions"
-alias peu="pyenv uninstall"
-alias pevi="pyenv virtualenv"
 alias peg="pyenv versions | grep -i"
+alias pevi="pyenv virtualenv"
+alias peu="pyenv uninstall"
 
 # alias i2="ipython"
 alias i="ipython"
