@@ -144,7 +144,7 @@ alias pig="pip list | grep -i "
 alias pe="pyenv"
 alias pev="pyenv versions"
 alias peg="pyenv versions | grep -i"
-alias pevi="pyenv virtualenv"
+alias pec="pyenv virtualenv"
 alias peu="pyenv uninstall"
 
 # alias i2="ipython"
@@ -296,7 +296,6 @@ fi
 # fi
 
 alias sba.="source env/bin/activate"
-# alias sbar="source ~/.venvs/reporting/bin/activate"
 alias dd="deactivate"
 # alias wo="workon"
 
