@@ -139,11 +139,11 @@ fi
 alias cpr="cd ~/Dropbox/Projects"
 
 alias pis="pip list"
-alias pig="pip list | grep -i "
+alias pisg="pip list | grep -i "
 
 alias pe="pyenv"
 alias pev="pyenv versions"
-alias peg="pyenv versions | grep -i"
+alias pevg="pyenv versions | grep -i"
 alias pec="pyenv virtualenv"
 alias peu="pyenv uninstall"
 
