@@ -78,7 +78,22 @@ case `uname` in
   Darwin)
     alias s="/usr/local/bin/gls -laF -h --group-directories-first --color"
 
-    export PATH=~/Library/Python/2.7/bin:$PATH
+    #export PATH=~/Library/Python/2.7/bin:$PATH
+
+    # For compilers to find zlib you may need to set:
+    export LDFLAGS="-L/usr/local/opt/zlib/lib"
+    export CPPFLAGS="-I/usr/local/opt/zlib/include"
+
+    # For pkg-config to find zlib you may need to set:
+    export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+
+    # For compilers to find sqlite you may need to set:
+    export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+    export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+
+    # For pkg-config to find sqlite you may need to set:
+    export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
+
 
   ;;
   Linux)
@@ -305,6 +320,7 @@ alias dd="deactivate"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
 
 unsetopt share_history
 
