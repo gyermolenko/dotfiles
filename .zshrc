@@ -31,7 +31,7 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip django)
+plugins=(git pip django docker)
 
 # User configuration
 
@@ -80,6 +80,7 @@ case `uname` in
 
     #export PATH=~/Library/Python/2.7/bin:$PATH
 
+    ## Fixes for pyenv ##
     # For compilers to find zlib you may need to set:
     export LDFLAGS="-L/usr/local/opt/zlib/lib"
     export CPPFLAGS="-I/usr/local/opt/zlib/include"
@@ -247,8 +248,10 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # now C-n/p considers already entered part of command
-bindkey "" history-beginning-search-backward
-bindkey "" history-beginning-search-forward
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+
+bindkey "^U" backward-kill-line
 
 # remove binding of numbers like 1-5 to terminal args
 bindkey -r '\e1'
