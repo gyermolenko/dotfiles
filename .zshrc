@@ -137,6 +137,7 @@ fi
 
 
 alias cpr="cd ~/Dropbox/Projects"
+alias lsg="s | grep -i "
 
 alias pis="pip list"
 alias pisg="pip list | grep -i "
