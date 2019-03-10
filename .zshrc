@@ -269,6 +269,9 @@ stty stop undef
 
 # source ~/.zsh_vi_mode.conf
 
+if [ -f /usr/share/autojump/autojump.sh ]; then
+    . /usr/share/autojump/autojump.sh
+fi
 
 # ================ Virtual envs ====================================
 if [ -d "$HOME/.pyenv"  ]; then
