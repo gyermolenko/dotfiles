@@ -269,8 +269,15 @@ stty stop undef
 
 # source ~/.zsh_vi_mode.conf
 
+## Autojump
+# Linux
 if [ -f /usr/share/autojump/autojump.sh ]; then
     . /usr/share/autojump/autojump.sh
+fi
+
+# Macos
+if [ -f /usr/local/etc/profile.d/autojump.sh ]; then
+    . /usr/local/etc/profile.d/autojump.sh
 fi
 
 # ================ Virtual envs ====================================
