@@ -261,7 +261,6 @@ bindkey -r '\e3'
 bindkey -r '\e4'
 bindkey -r '\e5'
 
-# bindkey "" 'clear-screen'
 
 # stop terminal from freezing on <C-S>
 stty stop undef
@@ -299,25 +298,25 @@ if [ -d "$HOME/.pyenv"  ]; then
 
 else
     echo 'pyenv not installed' >&2
-    if [ -d "$HOME/miniconda3/bin"  ]; then
-        export PATH=$HOME/miniconda3/bin:$PATH
-        echo 'miniconda3 added to PATH' >&2
+    # if [ -d "$HOME/miniconda3/bin"  ]; then
+    #     export PATH=$HOME/miniconda3/bin:$PATH
+    #     echo 'miniconda3 added to PATH' >&2
 
-        alias sa="source activate"
-        alias sd="source deactivate"
-    else
-        echo 'miniconda3 not installed' >&2
-        if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
-            echo 'virtualenvwrapper activated' >&2
-            # virtualenvwrapper lazy-load
-            # export WORKON_HOME=$HOME/.virtualenvs
-            # export PROJECT_HOME=$HOME/Devel
-            export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-            source /usr/local/bin/virtualenvwrapper_lazy.sh
-        else
-            echo 'virtualenvwrapper is also not installed' >&2
-        fi
-    fi
+    #     alias sa="source activate"
+    #     alias sd="source deactivate"
+    # else
+    #     echo 'miniconda3 not installed' >&2
+    #     if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+    #         echo 'virtualenvwrapper activated' >&2
+    #         # virtualenvwrapper lazy-load
+    #         # export WORKON_HOME=$HOME/.virtualenvs
+    #         # export PROJECT_HOME=$HOME/Devel
+    #         export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+    #         source /usr/local/bin/virtualenvwrapper_lazy.sh
+    #     else
+    #         echo 'virtualenvwrapper is also not installed' >&2
+    #     fi
+    # fi
 fi
 
 # if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
