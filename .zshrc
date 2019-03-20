@@ -153,7 +153,7 @@ fi
 
 
 alias cpr="cd ~/Dropbox/Projects"
-alias lsg="s | grep -i "
+alias sg="s | grep -i "
 
 alias pis="pip list"
 alias pisg="pip list | grep -i "
@@ -189,33 +189,37 @@ alias sup="sudo apt-get update && sudo apt-get upgrade"
 
 # alias fih="find . -maxdepth 1 -iname"
 
-fih() {
-    find . -maxdepth 1 -iname "*$1*"
-}
+## try `lsg` instead
+# fih() {
+#     find . -maxdepth 1 -iname "*$1*"
+# }
 
+## not used for long time
 # docker exec -it $1 ps aux | grep python | awk '{ print $2 }' | xargs -I{} docker exec -i $1 kill 
 # Kill process in running docker container by its name
-dkill() {
-    # Example:
-    # $ dkill <container_name> <process_name>
+# dkill() {
+#     # Example:
+#     # $ dkill <container_name> <process_name>
 
-    if [[ $# -ne 2 ]] ; then
-        echo "dkill [container name] [process name]"
-        return 1
-    fi
+#     if [[ $# -ne 2 ]] ; then
+#         echo "dkill [container name] [process name]"
+#         return 1
+#     fi
 
-    local pid=$(docker exec -it $1 ps aux | grep $2 | awk '{ print $2 }')
+#     local pid=$(docker exec -it $1 ps aux | grep $2 | awk '{ print $2 }')
 
-	    if [ -z "$pid" ] ; then
-        echo "process not found"
-        return 1
-    else
-        docker exec -it $1 kill $pid
-    fi
+#     if [ -z "$pid" ] ; then
+#         echo "process not found"
+#         return 1
+#     else
+#         docker exec -it $1 kill $pid
+#     fi
 
-}
+# }
 
-alias grex="grep -r --exclude-dir={env,.git} --exclude={\*.pyc,\*.tags}"
+# not used
+# alias grex="grep -r --exclude-dir={env,.git} --exclude={\*.pyc,\*.tags}"
+
 # alias tr="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 2"
 # alias tre="tree -I 'env|.env|.git|*.pyc|__pycache__' -L 3"
 
@@ -225,12 +229,13 @@ alias ,ez="vi ~/.zshrc"
 alias ,rz="source ~/.zshrc"
 alias ,et="vi ~/.tmux.conf"
 
-# alias tmux="tmux -2"
-# alias tmuxn="tmux-next"
-# alias tmuxsw="./tmux_setup.sh"
-# alias tmuxsh="./tmux_setup_home.sh"
 
-# alias ag="ag --color-match 1\;31"
+# now C-n/p considers already entered part of command
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+
+bindkey "^U" backward-kill-line
+
 
 # known issues: colors for pure vim are bad in tmux (black right side of each row)
 export TERM=xterm-256color
@@ -248,18 +253,16 @@ export LESS_TERMCAP_so=$'\E[38;5;016m\E[48;5;220m'    # begin standout-mode - in
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
-# now C-n/p considers already entered part of command
-bindkey "^P" history-beginning-search-backward
-bindkey "^N" history-beginning-search-forward
 
-bindkey "^U" backward-kill-line
-
+# try to leave wo this
 # remove binding of numbers like 1-5 to terminal args
-bindkey -r '\e1'
-bindkey -r '\e2'
-bindkey -r '\e3'
-bindkey -r '\e4'
-bindkey -r '\e5'
+# bindkey -r '\e1'
+# bindkey -r '\e2'
+# bindkey -r '\e3'
+# bindkey -r '\e4'
+# bindkey -r '\e5'
+
+
 
 
 # stop terminal from freezing on <C-S>
