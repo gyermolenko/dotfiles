@@ -295,7 +295,8 @@ if [ -d "$HOME/.pyenv"  ]; then
 
         # alias pe="pyenv"
         alias pev="pyenv versions | grep -Ev '^\*|system|^\s\s[2-3]'"
-        alias pevg="pyenv versions | grep -i"
+        # alias pevg="pyenv versions | grep -i"
+        alias pevg="pev | grep -i"
         alias pec="pyenv virtualenv"
         alias peu="pyenv uninstall"
 
