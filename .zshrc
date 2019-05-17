@@ -309,8 +309,8 @@ else
 fi
 
 
-# alias sba.="source env/bin/activate"
-# alias dd="deactivate"
+alias sba.="source env/bin/activate"
+alias dd="deactivate"
 # alias wo="workon"
 
 # ======= Useful ==========================================
