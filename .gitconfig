@@ -10,5 +10,5 @@
 [includeIf "gitdir/i:~/dotfiles/"]
 	path = ~/dotfiles/.gitconfig_dotfiles
 
-[includeIf "gitdir/i:~/code/ptu/"]
-	path = ~/code/ptu/.gitconfig_work
+[includeIf "gitdir/i:~/code/work/"]
+	path = ~/dotfiles/.gitconfig_work
