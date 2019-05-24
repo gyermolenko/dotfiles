@@ -230,6 +230,7 @@ bindkey "^N" history-beginning-search-forward
 
 bindkey "^U" backward-kill-line
 
+bindkey "^X^X" edit-command-line
 
 # known issues: colors for pure vim are bad in tmux (black right side of each row)
 export TERM=xterm-256color
