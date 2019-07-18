@@ -316,6 +316,7 @@ alias dd="deactivate"
 
 # ======= Useful ==========================================
 # $ sudo service --status-all | grep postgr
+# $ systemctl stop <service-name>
 # =============================================================
 
 export LC_ALL=en_US.UTF-8
