@@ -124,23 +124,17 @@ fi
 if [ -d "/usr/local/opt/mysql@5.6/bin" ] ; then
     export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 fi
-
-if [ -d "/opt/apache-spark/" ] ; then
-    export SPARK_HOME=/opt/apache-spark/spark-2.3.1-bin-hadoop2.7
-    export PATH="$HOME/bin:$HOME/.local/bin:$SPARK_HOME:$PATH"
+if [ -d "/usr/local/opt/rabbitmq/sbin" ] ; then
+    export PATH="/usr/local/opt/rabbitmq/sbin:$PATH"
 fi
 
+
+# go
 if [ -f /usr/local/bin/go ]; then
     # echo "golang is present"
 
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
-
-# if [ -d "/usr/local/go/bin/" ] ; then
-#     export PATH="/usr/local/go/bin:$PATH"
-#     export GOPATH="~/go"
-#     # export GOROOT="/usr/local/go"
-# fi
 
 fi
 
@@ -152,7 +146,7 @@ fi
 # ==========================================================
 
 
-alias cpr="cd ~/Dropbox/Projects"
+# alias cpr="cd ~/Dropbox/Projects"
 alias sg="s | grep -i "
 
 alias pis="pip list"
