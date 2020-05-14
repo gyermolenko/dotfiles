@@ -319,3 +319,19 @@ export LANG=en_US.UTF-8
 
 unsetopt share_history
 
+export PIP_REQUIRE_VIRTUALENV=true
+
+# ===== Git grep through all repositories in current folder =========
+ggrep() {
+    find . -type d -name .git -maxdepth 2 | while read line; do
+    (
+        cd $line/..
+        cwd=$(pwd)
+        foldername=${PWD##*/}
+        if [[ $(git grep "$@") ]] then
+            echo "$(tput setaf 2) --- $foldername --- $(tput sgr0)"
+            git --no-pager grep -n "$@"
+        fi
+    )
+    done
+}
