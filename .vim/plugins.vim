@@ -76,7 +76,6 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'tommcdo/vim-exchange'
 
-Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'teranex/jk-jumps.vim'
 
 
@@ -102,7 +101,11 @@ Plug 'vim-utils/vim-vertical-move'
 Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
+" File-formats / syntax
+" Plug 'fatih/vim-go', { 'for': 'go' }
+" Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
+
+Plug 'rust-lang/rust.vim'
 " ====================================================================
 
 
