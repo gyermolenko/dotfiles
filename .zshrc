@@ -127,6 +127,9 @@ fi
 if [ -d "/usr/local/opt/rabbitmq/sbin" ] ; then
     export PATH="/usr/local/opt/rabbitmq/sbin:$PATH"
 fi
+if [ -d "$HOME/.poetry/bin" ] ; then
+    export PATH="$HOME/.poetry/bin:$PATH"
+fi
 
 
 # go
@@ -166,6 +169,8 @@ alias gco="git checkout"
 alias glog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gsh="git show"
 alias gcm="git commit -m"
+alias gca="git commit --amend --date=now"
+alias gre="git restore"
 
 ## docker
 # alias dk="docker"
@@ -319,7 +324,7 @@ export LANG=en_US.UTF-8
 
 unsetopt share_history
 
-export PIP_REQUIRE_VIRTUALENV=true
+# export PIP_REQUIRE_VIRTUALENV=true
 
 # ===== Git grep through all repositories in current folder =========
 ggrep() {
