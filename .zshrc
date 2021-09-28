@@ -31,7 +31,7 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip django docker fasd)
+plugins=(git pip docker)
 
 # User configuration
 
@@ -130,7 +130,9 @@ fi
 if [ -d "$HOME/.poetry/bin" ] ; then
     export PATH="$HOME/.poetry/bin:$PATH"
 fi
-
+if [ -d "$HOME/bin" ] ; then
+    export PATH="$HOME/bin:$PATH"
+fi
 
 # go
 if [ -f /usr/local/bin/go ]; then

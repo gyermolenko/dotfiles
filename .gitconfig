@@ -12,3 +12,5 @@
 
 [includeIf "gitdir/i:~/code/work/"]
 	path = ~/dotfiles/.gitconfig_work
+[pull]
+	ff = only
