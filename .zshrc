@@ -31,7 +31,7 @@ ZSH_THEME="eastwood"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git pip docker)
+plugins=(git docker)
 
 # User configuration
 
@@ -129,6 +129,9 @@ if [ -d "/usr/local/opt/rabbitmq/sbin" ] ; then
 fi
 if [ -d "$HOME/.poetry/bin" ] ; then
     export PATH="$HOME/.poetry/bin:$PATH"
+fi
+if [ -f "$HOME/.local/bin/poetry" ] ; then
+    export PATH="$HOME/.local/bin:$PATH"
 fi
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
@@ -280,16 +283,20 @@ stty stop undef
 # ============================================================
 
 # ================ Virtual envs ====================================
-if [ -d "$HOME/.pyenv"  ]; then
+# if [ -d "$HOME/.pyenv"  ]; then
+if true; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     # echo 'pyenv added to PATH' >&2
 
-    if command -v pyenv 1>/dev/null 2>&1; then
+    if which pyenv > /dev/null; then
+        eval "$(pyenv init --path)"
         eval "$(pyenv init -)"
     fi
 
-    if [ -d "$HOME/.pyenv/plugins/pyenv-virtualenv"  ]; then
+    # if [ -d "/usr/local/Cellar/pyenv-virtualenv" ]; then
+    if which pyenv-virtualenv-init > /dev/null; then 
+        # [ -d "$HOME/.pyenv/plugins/pyenv-virtualenv"  ]
         eval "$(pyenv virtualenv-init -)"
 
         alias pa="pyenv activate"

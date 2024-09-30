@@ -52,7 +52,7 @@ Plug 'tpope/vim-unimpaired'
 """" HTML
 Plug 'mitsuhiko/vim-jinja'
 "" highlight enclosing html tag
-Plug 'Valloric/MatchTagAlways'
+" Plug 'Valloric/MatchTagAlways'
 Plug 'tweekmonster/django-plus.vim'
 
 Plug 'michaeljsmith/vim-indent-object'
